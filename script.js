@@ -26,7 +26,7 @@ function updateInputText(pChild){
   var newStr = str;
   
   var command = str.substring(
-    str.lastIndexOf("&lt;"), 
+    str.lastIndexOf("&lt;") + 3, 
     str.lastIndexOf("&gt;")
   );
   
@@ -61,4 +61,8 @@ function updateVariableText(pChild){
 function initializePage(){
   updatePageText();
   alert(localStorage['firstname']);
+}
+
+function PLACEHOLDER()
+{
 }
