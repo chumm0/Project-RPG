@@ -6,7 +6,7 @@ function resetVariables(){
   localStorage['gender'] = 1;
 }
 
-function setVariable(varName, value
+function setVariable(varName, value){
   localStorage[varName] = value;
 }
 
