@@ -6,27 +6,36 @@ function resetVariables(){
   localStorage['gender'] = 1;
 }
 
-function displayVariableText(){
+function updatePageText(){
   var body = document.getElementById('svbanner').parentNode;
   var pChildren = body.getElementsByTagName('p');
-  alert(pChildren.length);
+  
   for (var i = 0; i < pChildren.length; i++)
   { 
-    var str = pChildren[i].innerHTML;
-    var newStr = str;
-    
-    newStr = newStr.replace(new RegExp('#firstname', 'g'), localStorage['firstname']);
-    newStr = newStr.replace(new RegExp('#lastname', 'g'), localStorage['lastname']);
-    
-    if (localStorage['gender'] == 1){
-      newStr = newStr.replace(new RegExp('#gender', 'g'), 'boy');
-    }
-    else if (localStorage['gender'] == 2){
-      newStr = newStr.replace(new RegExp('#gender', 'g'), 'girl');
-    }
-    
-    pChildren[i].innerHTML = newStr;
+    //updateInputText
+    updateVariableText(pChildren[i]);
   }
+}
+
+function updateInputText(){
+  
+}
+
+function updateVariableText(pChild){
+  var str = pChild.innerHTML;
+  var newStr = str;
+    
+  newStr = newStr.replace(new RegExp('#firstname', 'g'), localStorage['firstname']);
+  newStr = newStr.replace(new RegExp('#lastname', 'g'), localStorage['lastname']);
+    
+  if (localStorage['gender'] == 1){
+    newStr = newStr.replace(new RegExp('#gender', 'g'), 'boy');
+  }
+  else if (localStorage['gender'] == 2){
+    newStr = newStr.replace(new RegExp('#gender', 'g'), 'girl');
+  }
+    
+  pChild.innerHTML = newStr;
 }
 
 function initializePage(){
