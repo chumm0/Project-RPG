@@ -9,7 +9,7 @@ function resetVariables(){
 function displayVariableText(){
   var body = document.getElementById('svbanner').parentNode;
   var pChildren = body.getElementsByTagName('p');
-
+  alert(pChildren.length);
   for (var i = 0; i < pChildren.length; i++)
   { 
     var str = pChildren[i].innerHTML;
