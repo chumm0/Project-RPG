@@ -43,8 +43,8 @@ function updateInputText(pChild){
     var input = document.createElement("input");
     input.type = "text";
     input.placeholder = "Type Here";
-    input.oninput = function() { PLACEHOLDER() };
     pChild.appendChild(input);
+    input.oninput = function() { PLACEHOLDER() };
   }
 }
 
