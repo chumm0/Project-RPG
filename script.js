@@ -6,6 +6,10 @@ function resetVariables(){
   localStorage['gender'] = 1;
 }
 
+function setVariable(varName, value){
+  localStorage[varName] = value;
+}
+
 function updatePageText(){
   var body = document.getElementById('svbanner').parentNode;
   var pChildren = body.getElementsByTagName('p');
@@ -17,8 +21,24 @@ function updatePageText(){
   }
 }
 
-function updateInputText(){
+function updateInputText(pChild){
+  var str = pChild.innerHTML;
+  var newStr = str;
   
+  var command = str.substring(
+    str.lastIndexOf("<") + 1, 
+    str.lastIndexOf(">")
+  );
+  
+  alert(command);
+  
+  /*var input = document.createElement("input");
+  input.type = "text";
+  input.placeholder="Type Here";
+  input.onchange="setVariable(&quot;" +  + "&quot;, + "  ")";
+  container.appendChild(input); // put it into the DOM
+  
+  <input type='text' name='txt' placeholder='Type Here' onchange='setVariable(&quot;firstname&quot;, this.value)'>*/
 }
 
 function updateVariableText(pChild){
@@ -41,4 +61,8 @@ function updateVariableText(pChild){
 function initializePage(){
   updatePageText();
   alert(localStorage['firstname']);
+}
+
+function PLACEHOLDER()
+{
 }
