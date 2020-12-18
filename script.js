@@ -62,7 +62,3 @@ function initializePage(){
   updatePageText();
   alert(localStorage['firstname']);
 }
-
-function PLACEHOLDER()
-{
-}
