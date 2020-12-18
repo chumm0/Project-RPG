@@ -33,8 +33,8 @@ function embedScriptIntoHead(){
   header.append(mainS);
 }
 
-function initializePage
-alert("YAA");
+function initializePage(){
+  alert("YAA");
   embedScriptIntoHead();
   //addCSS();
   addDefaultButtons();
