@@ -41,11 +41,10 @@ function updateInputText(pChild){
     pChild.innerHTML = newStr.replace(new RegExp("&lt;" + variableName + "&gt;", 'g'), "");
     
     var input = document.createElement("input");
+    pChild.appendChild(input);
     input.type = "text";
     input.placeholder = "Type Here";
-    pChild.appendChild(input).on('oninput','input',function(){
-      alert("HELP");
-    });
+    input.onchange = function() = { alert("Y") };
   }
 }
 
