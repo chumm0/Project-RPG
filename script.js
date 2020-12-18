@@ -25,20 +25,18 @@ function updateInputText(pChild){
   var str = pChild.innerHTML;
   var newStr = str;
   
-  var command = str.substring(
+  var variableName = str.substring(
     str.lastIndexOf("&lt;") + 4, 
     str.lastIndexOf("&gt;")
   );
   
-  alert(command);
-  
-  /*var input = document.createElement("input");
-  input.type = "text";
-  input.placeholder="Type Here";
-  input.onchange="setVariable(&quot;" +  + "&quot;, + "  ")";
-  container.appendChild(input); // put it into the DOM
-  
-  <input type='text' name='txt' placeholder='Type Here' onchange='setVariable(&quot;firstname&quot;, this.value)'>*/
+  if (variableName.length > 0){
+    var input = document.createElement("input");
+    input.type = "text";
+    input.placeholder="Type Here";
+    input.onchange="setVariable(&quot;" + variableName + "&quot;, " + "this.value)";
+    pChild.appendChild(input); // put it into the DOM
+  }
 }
 
 function updateVariableText(pChild){
@@ -61,4 +59,8 @@ function updateVariableText(pChild){
 function initializePage(){
   updatePageText();
   alert(localStorage['firstname']);
+}
+
+function PLACEHOLDER()
+{
 }
