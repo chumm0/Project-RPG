@@ -1,7 +1,7 @@
 //Variables
 function PLACEHOLDER()
 {
-  alert("TEST");
+  alert("test");
 }
 
 function resetVariables(){
@@ -43,7 +43,7 @@ function updateInputText(pChild){
     var input = document.createElement("input");
     input.type = "text";
     input.placeholder = "Type Here";
-    input.onchange = function() { PLACEHOLDER() };
+    input.oninput = function() { PLACEHOLDER() };
     pChild.appendChild(input);
   }
 }
