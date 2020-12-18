@@ -33,3 +33,7 @@ function initializePage(){
   displayVariableText();
   alert(localStorage['firstname']);
 }
+
+function PLACEHOLDER()
+{
+}
