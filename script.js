@@ -1,10 +1,10 @@
 //Variables
 function resetVariables(){
+  alert("t");
   localStorage.clear();
   localStorage['firstname'] = 'Unknown';
   localStorage['lastname'] = '';
   localStorage['gender'] = 1;
-  alert(localStorage['firstname']);
 }
 
 function initializePage(){
