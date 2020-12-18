@@ -1,4 +1,8 @@
 //Variables
+function PLACEHOLDER()
+{
+}
+
 function resetVariables(){
   alert("Resetting Variables");
   localStorage.clear();
@@ -63,9 +67,4 @@ function updateVariableText(pChild){
 function initializePage(){
   updatePageText();
   alert(localStorage['firstname']);
-}
-
-function PLACEHOLDER()
-{
-  alert("Test");
 }
