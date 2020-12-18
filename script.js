@@ -37,8 +37,8 @@ function updateInputText(pChild){
     
     var input = document.createElement("input");
     input.type = "text";
-    input.placeholder= "Type Here";
-    input.onchange= "setVariable(&quot;" + variableName + "&quot;, " + "this.value)";
+    input.placeholder = "Type Here";
+    input.onchange = function() { setVariable(variableName, this.value) };
     pChild.appendChild(input);
   }
 }
@@ -63,4 +63,8 @@ function updateVariableText(pChild){
 function initializePage(){
   updatePageText();
   alert(localStorage['firstname']);
+}
+
+function PLACEHOLDER()
+{
 }
