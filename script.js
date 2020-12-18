@@ -1,4 +1,4 @@
-//Variables
+//Variable
 function resetVariables(){
   alert("t");
   localStorage.clear();
