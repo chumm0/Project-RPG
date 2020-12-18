@@ -39,6 +39,10 @@ function updateVariableText(pChild){
 }
 
 function initializePage(){
-  displayVariableText();
+  updatePageText();
   alert(localStorage['firstname']);
+}
+
+function PLACEHOLDER()
+{
 }
