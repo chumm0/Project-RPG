@@ -44,7 +44,7 @@ function updateInputText(pChild){
     pChild.appendChild(input);
     input.type = "text";
     input.placeholder = "Type Here";
-    input.onchange = function() = { alert("Y") };
+    input.onchange = function() { alert("Y") };
   }
 }
 
