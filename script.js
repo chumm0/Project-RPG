@@ -8,6 +8,7 @@ function resetVariables(){
 }
 
 function setVariable(varName, value){
+  alert("Changing " + varName + " to " + value);
   localStorage[varName] = value;
 }
 
@@ -36,8 +37,8 @@ function updateInputText(pChild){
     
     var input = document.createElement("input");
     input.type = "text";
-    input.placeholder="Type Here";
-    input.onchange="setVariable(&quot;" + variableName + "&quot;, " + "this.value)";
+    input.placeholder= "Type Here";
+    input.onchange= "setVariable(&quot;" + variableName + "&quot;, " + "this.value)";
     pChild.appendChild(input);
   }
 }
@@ -62,4 +63,8 @@ function updateVariableText(pChild){
 function initializePage(){
   updatePageText();
   alert(localStorage['firstname']);
+}
+
+function PLACEHOLDER()
+{
 }
