@@ -26,12 +26,12 @@ function updateInputText(pChild){
   var newStr = str;
   
   var variableName = str.substring(
-    str.lastIndexOf("&lt;") + 4, 
-    str.lastIndexOf("&gt;")
+    newStr.lastIndexOf("&lt;") + 4, 
+    newStr.lastIndexOf("&gt;")
   );
   
   if (variableName.length > 0){
-    newStr = newStr.replace(new RegExp("&lt;" + variableName + "&gt;", 'g'), "");
+    pChild.innerHTML = newStr.replace(new RegExp("&lt;" + variableName + "&gt;", 'g'), "");
     
     var input = document.createElement("input");
     input.type = "text";
@@ -61,4 +61,8 @@ function updateVariableText(pChild){
 function initializePage(){
   updatePageText();
   alert(localStorage['firstname']);
+}
+
+function PLACEHOLDER()
+{
 }
