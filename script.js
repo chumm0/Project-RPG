@@ -1,6 +1,7 @@
 //Variables
 function PLACEHOLDER()
 {
+  alert("TEST");
 }
 
 function resetVariables(){
