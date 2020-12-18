@@ -8,5 +8,5 @@ function resetVariables(){
 }
 
 function initializePage(){
-  alert(localStorage['firstname']);
+  alert("R");
 }
