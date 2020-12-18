@@ -16,7 +16,7 @@ function updatePageText(){
   
   for (var i = 0; i < pChildren.length; i++)
   { 
-    //updateInputText
+    updateInputText(pChildren[i]);
     updateVariableText(pChildren[i]);
   }
 }
@@ -61,4 +61,8 @@ function updateVariableText(pChild){
 function initializePage(){
   updatePageText();
   alert(localStorage['firstname']);
+}
+
+function PLACEHOLDER()
+{
 }
