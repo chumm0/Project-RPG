@@ -6,9 +6,13 @@ function resetVariables(){
   localStorage['gender'] = 1;
 }
 
-function initializePage(){
-  displayVariableText();
-  alert(localStorage['firstname']);
+function embedScriptIntoHead(){
+  var header = document.getElementsByTagName('head')[0];
+  var mainS = document.createElement('script');
+  mainS.type = 'text/javascript';
+  mainS.src = 'https://codepen.io/jordanvang/pen/wvMzmoz.js';
+  
+  header.append(mainS);
 }
 
 function displayVariableText(){
@@ -32,4 +36,10 @@ function displayVariableText(){
     
     pChildren[i].innerHTML = newStr;
   }
+}
+
+function initializePage(){
+  embedScriptIntoHead();
+  displayVariableText();
+  alert(localStorage['firstname']);
 }
