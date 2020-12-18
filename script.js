@@ -7,5 +7,5 @@ function resetVariables(){
 }
 
 function initializePage(){
-  alert(localStorage['firstname'];
+  alert(localStorage['firstname']);
 }
