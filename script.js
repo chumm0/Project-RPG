@@ -2,7 +2,7 @@
 function resetVariables(){
   localStorage.clear();
   localStorage['firstname'] = 'Unknown';
-  localStorage['lastname'] = '';
+  localStorage['lastname'] = 'Name';
   localStorage['gender'] = 1;
 }
 
