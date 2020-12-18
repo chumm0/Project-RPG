@@ -1,4 +1,5 @@
-function Test()
+function ReplaceVariableText()
 {
-  alert("test");
+  var childNode = document.getElementsByTagName("Div")[2]
+  
 }
