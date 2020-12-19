@@ -3,20 +3,19 @@ var skillpoints = 5;
 function updatePlayerFirstName(value){
   var player = parseCharacter("player");
   player.firstname = value;
-  alert(player.firstname);
-  storeCharacter(player);
+  storeCharacter("player", player);
 }
 
 function updatePlayerHouseName(value){
   var player = parseCharacter("player");
   player.housename = value;
-  storeCharacter(player);
+  storeCharacter("player", player);
 }
 
 function updatePlayerGender(value){
   var player = parseCharacter("player");
   player.setGender(value);
-  storeCharacter(player);
+  storeCharacter("player", player);
 }
 
 function addToPlayerCombat(value){
