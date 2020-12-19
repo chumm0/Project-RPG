@@ -23,11 +23,9 @@ function initializeStates(){
 
 function printStates(){
   var statesList = parseStatesList("statesList");
-  alert("List After: " + statesList.length);
   var str = "States:\n";
   for (var i = 0; i < statesList.length; i++){
-    alert("State:" + statesList[i].getName());
-    //str += statesList[i].getName();
+    str += statesList[i].getName() + " has " + statesList[i].getSettlements() + " settlements!";
   }
   
   alert(str);
