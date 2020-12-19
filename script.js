@@ -19,7 +19,8 @@ function getVariable(varName){
 
 function addToVariable(varName, value, linkNum){
   localStorage[varName] += value;
-  PostBack("FollowLink", &quot;linkNum&quot;);return false;
+  PostBack('FollowLink', '2');
+  return false;
 }
 
 function updatePageText(){
