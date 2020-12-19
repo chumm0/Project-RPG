@@ -1,16 +1,18 @@
 //Variables
-var variableNames = [ 'firstname', 'lastname', 'gender', 'combat', 'intelligence', 'social', 'skillpoints' ];
+var variableNames = [ 'firstname', 'lastname', 'gender' ];
+var skillVariableNames = [ 'combat', 'intelligence', 'social', 'skillpoints' ]
 
 function resetVariables(){
   localStorage.clear();
   
   localStorage[variableNames[0]] = 'Unknown';
   localStorage[variableNames[1]] = 'Name';
-  localStorage[variableNames[2]] = 1;
-  localStorage[variableNames[3]] = 0;
-  localStorage[variableNames[4]] = 0;
-  localStorage[variableNames[5]] = 0;
-  localStorage[variableNames[6]] = 5;
+  localStorage[variableNames[2]] = 1
+  
+  localStorage[skillVariableNames[0]] = 0;
+  localStorage[skillVariableNames[1]] = 0;
+  localStorage[skillVariableNames[2]] = 0;
+  localStorage[skillVariableNames[3]] = 5;
 }
 
 function setVariable(varName, value){
@@ -39,7 +41,7 @@ function updatePageText(){
 function updateVariableText(pChild){
   var str = pChild.innerHTML;
   var newStr = str;
-    
+  
   newStr = newStr.replace(new RegExp('#firstname', 'g'), localStorage['firstname']);
   newStr = newStr.replace(new RegExp('#lastname', 'g'), localStorage['lastname']);
     
