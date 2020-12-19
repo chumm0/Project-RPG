@@ -1,5 +1,3 @@
-var skillpoints = 5;
-
 function updatePlayerFirstName(value){
   var player = parseCharacter("player");
   player.setFirstname(value);
@@ -20,13 +18,11 @@ function updatePlayerGender(value){
 
 function addToPlayerSkill(skillName, value){
   var player = parseCharacter("player");
-  alert("before add");
-  if (skillpoints > 0){
-    skillpoints--;
+  if (player.getSkillpoints() > 0){
+    player.setSkillpoints(player.getSkillpoints() - 1);
     switch(skillName){
       case "combat":
         player.setCombat(player.getCombat() + value);
-        alert("after add");
         break;
       case "intelligence":
         player.setIntelligence(player.getIntelligence() + value);
@@ -46,19 +42,19 @@ function subtractFromPlayerSkill(skillName, value){
     case "combat":
       if(player.getCombat() > 0){
         player.setCombat(player.getCombat() - value);
-        skillpoints++;
+        player.setSkillpoints(player.getSkillpoints() + 1);
       }
       break;
     case "intelligence":
       if (player.getIntelligence() > 0){
         player.setIntelligence(player.getIntelligence() - value);
-        skillpoints++;
+        player.setSkillpoints(player.getSkillpoints() + 1);
       }
       break;
     case "social":
       if (player.getSocial() > 0){
         player.setSocial(player.getSocial() - value);
-        skillpoints++;
+        player.setSkillpoints(player.getSkillpoints() + 1);
       }
       break;
   }
