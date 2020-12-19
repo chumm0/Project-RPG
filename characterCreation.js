@@ -12,7 +12,7 @@ function addToSkill(varName, value, linkNum){
     }
   }
   
-  updateVariableHTMLText()
+  updateSkillVariableHTMLText()
 }
 
 function updateSkillVariableHTMLText(){
