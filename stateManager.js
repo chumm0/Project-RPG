@@ -12,7 +12,9 @@ function initializeStates(){
       
       settlementsList.push(settlement);
     }
-    alert("1" + settlementsList.length);
+    
+    var stateName = generateStateName();
+    alert("1 " + stateName);
     var state = new State(generateStateName(), settlementsList)
     alert("2");
     statesList.push(state);
