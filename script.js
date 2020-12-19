@@ -19,6 +19,7 @@ function getVariable(varName){
 
 function addToVariable(varName, value){
   localStorage[varName] += value;
+  alert(varName + " is " + value);
   window.location.reload(false); 
 }
 
