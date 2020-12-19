@@ -29,18 +29,13 @@ function printStates(){
   
   for (var i = 0; i < statesList.length; i++){
     var currentState = statesList[i];
-    str += currentState.getName() + " has " + currentState.getSettlements().length + " settlements! Here are the settlements:<br>";
+    var settlementsList = parseSettlementsList(currentState.getSettlements());
     
-    for (var j = 0; j < currentState.getSettlements().length; j++){
-      var currentSettlement = currentState.getSettlements()[j];
-      str += currentSettlement.name + " - Here is a list of its important characters:<br>";
-      
-      for (var k = 0; k < currentSettlement.importantCharacters; k++){
-        var currentImportantCharacter = currentSettlement.importantCharacters[k];
-        str += currentImportantCharacter.firstname + " of House " currentImportantCharacter.housename + "<br>";
-      }
-      
-      str += "<br><br>";
+    str += currentState.getName() + " has " + settlementsList.length + " settlements! Here are the settlements:<br>";
+    
+    for (var j = 0; j < settlementsList.length; j++){
+      var currentSettlement = settlementsList[j];
+      str += currentSettlement.getName() + " - Here is a list of its important characters:<br>";
     }
     
     str += "<br><br><br>";
