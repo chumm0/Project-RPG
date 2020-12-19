@@ -33,7 +33,7 @@ class Character{
     this.wealth = wealth;
   }
   
-  setFirstName(firstname) { this.firstname = firstname; }
+  setFirstName(firstname) { this.firstname = firstname; alert(firstname);}
   getFirstName() { return this.firstname; }
   
   setHouseName(housename) { this.housename = housename; }
