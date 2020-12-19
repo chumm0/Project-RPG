@@ -13,6 +13,10 @@ function setVariable(varName, value){
   localStorage[varName] = value;
 }
 
+function getVariable(varName){
+  return localStorage[varName];
+}
+
 function updatePageText(){
   var body = document.getElementById('svbanner').parentNode;
   var pChildren = body.getElementsByTagName('p');
