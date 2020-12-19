@@ -18,7 +18,7 @@ function updatePageText(){
 function updateVariableText(pChild){
   var player = JSON.parse(localStorage.getItem('player'));
   alert(player);
-  alert(player.firstnname);
+  alert(player.firstname);
   var str = pChild.innerHTML;
   var newStr = str;
   
