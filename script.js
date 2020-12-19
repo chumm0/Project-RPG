@@ -38,7 +38,11 @@ function updatePageText(){
   
   for (var i = 0; i < variableNames.length; i++){
     var x = document.getElementsByClassName(variableNames[i]);
-    x[i].innerHTML = getVariable(variableNames[i]);
+    
+    for (var j = 0; j < x.length; x++)
+    {
+      x[j].innerHTML = getVariable(variableNames[i]);
+    }
   }
 }
 
