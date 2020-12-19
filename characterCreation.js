@@ -1,4 +1,5 @@
 var skillpoints = 5;
+var player = JSON.parse(localStorage.getItem('player'));
 
 function addToPlayerCombat(value){
   if (value > 0){
@@ -13,7 +14,7 @@ function addToPlayerCombat(value){
       skillpoints++;
     }
   }
-  
+  localStorage.setItem('player', JSON.stringify(player));
   updateSkillVariableHTMLText()
 }
 
@@ -30,7 +31,7 @@ function addToPlayerIntelligence(value){
       skillpoints++;
     }
   }
-  
+  localStorage.setItem('player', JSON.stringify(player));
   updateSkillVariableHTMLText()
 }
 
@@ -47,7 +48,7 @@ function addToPlayerSocial(value){
       skillpoints++;
     }
   }
-  
+  localStorage.setItem('player', JSON.stringify(player));
   updateSkillVariableHTMLText()
 }
 
