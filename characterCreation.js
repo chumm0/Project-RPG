@@ -1,51 +1,50 @@
 var skillpoints = 5;
 
-function createPlayerCharacter(){
-  var playerCharacter = new Character();
-  localStorage.setItem('playerCharacter', JSON.stringify(playerCharacter));
-}
-
-function updateFN(value){
-  var playerCharacter = JSON.parse(localStorage.getItem('playerCharacter'));
-  playerCharacter.setFirstName(value);
-  localStorage.setItem('playerCharacter', JSON.stringify(playerCharacter));
-}
-
-function updateHN(value){
-  var playerCharacter = JSON.parse(localStorage.getItem('playerCharacter'));
-  playerCharacter.setHouseName(value);
-  localStorage.setItem('playerCharacter', JSON.stringify(playerCharacter));
-}
-
-function updateCombat(value){
-  var playerCharacter = JSON.parse(localStorage.getItem('playerCharacter'));
-  playerCharacter.setCombat(value);
-  localStorage.setItem('playerCharacter', JSON.stringify(playerCharacter));
-}
-
-function updateIntelligence(value){
-  var playerCharacter = JSON.parse(localStorage.getItem('playerCharacter'));
-  playerCharacter.setIntelligence(value);
-  localStorage.setItem('playerCharacter', JSON.stringify(playerCharacter));
-}
-
-function updateSocial(value){
-  var playerCharacter = JSON.parse(localStorage.getItem('playerCharacter'));
-  playerCharacter.setSocial(value);
-  localStorage.setItem('playerCharacter', JSON.stringify(playerCharacter));
-}
-
-function addToSkill(varName, value, linkNum){
+function addToPlayerCombat(value){
   if (value > 0){
-    if (parseInt(getVariable("skillpoints")) > 0){
-      addToVariable(varName, value);
-      addToVariable("skillpoints", -value);
+    if (skillpoints > 0){
+      player.setCombat(player.getCombat() + 1);
+      skillpoints--;
     }
   }
   else if (value < 0){
-    if (parseInt(getVariable(varName)) > 0){
-      addToVariable(varName, value);
-      addToVariable("skillpoints", -value);
+    if (player.getCombat() > 0){
+      player.setCombat(player.getCombat() - 1);
+      skillpoints++;
+    }
+  }
+  
+  updateSkillVariableHTMLText()
+}
+
+function addToPlayerIntelligence(value){
+  if (value > 0){
+    if (skillpoints > 0){
+      player.setIntelligence(player.getIntelligence() + 1);
+      skillpoints--;
+    }
+  }
+  else if (value < 0){
+    if (player.getIntelligence() > 0){
+      player.setIntelligence(player.getIntelligence() - 1);
+      skillpoints++;
+    }
+  }
+  
+  updateSkillVariableHTMLText()
+}
+
+function addToPlayerSocial(value){
+  if (value > 0){
+    if (skillpoints > 0){
+      player.setSocial(player.getSocial() + 1);
+      skillpoints--;
+    }
+  }
+  else if (value < 0){
+    if (player.getSocial() > 0){
+      player.setSocial(player.getSocial() - 1);
+      skillpoints++;
     }
   }
   
