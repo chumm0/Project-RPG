@@ -9,14 +9,13 @@ function initializeStates(){
       var settlementName = generateSettlementName();
       var settlementSize = getRandomInt(3) + 1;
       var settlement = new Settlement(settlementName, settlementSize);
-  alert("1");
       
       settlementsList.push(settlement);
-  alert("2");
     }
-    
+    alert("1");
     var state = new State(generateStateName(), settlementsList)
     statesList.push(state);
+    alert("2");
   }
   localStorage.setItem("statesList", JSON.stringify(statesList));
   alert("3");
