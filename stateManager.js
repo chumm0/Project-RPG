@@ -1,6 +1,6 @@
 function initializeStates(){
   var statesList = [];
-  var numOfStates = getRandomInt(3) + 1; // at least 1 but no more than 3
+  var numOfStates = getRandomInt(3) + 2; // at least 2 but no more than 3
   for (var stateCounter = 0; stateCounter < numOfStates; stateCounter++){ // for each state
     var settlementsList = [];
     var numOfSettlements = getRandomInt(5) + 1; // at least 1 but no more than 5
@@ -25,7 +25,7 @@ function printStates(){
   var statesList = parseStatesList("statesList");
   var str = "States:\n";
   for (var i = 0; i < statesList.length; i++){
-    str += statesList[i].getName() + " has " + statesList[i].getSettlements() + " settlements!";
+    str += statesList[i].getName() + " has " + statesList[i].getSettlements().length + " settlements!";
   }
   
   alert(str);
