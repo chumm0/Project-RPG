@@ -1,4 +1,4 @@
-function generateRandomGender(){
+function generateGender(){
   var randomNum = getRandomInt(2) + 1;
   if (randomNum == 1){
     return Gender.male;
