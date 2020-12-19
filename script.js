@@ -37,6 +37,18 @@ function updateVariableText(pChild){
   pChild.innerHTML = newStr;
 }
 
+function updateVariableHTMLText(){
+  var varNames = ["combat", "intelligence", "social"];
+  
+  for (var i = 0; i < varNames.length ; i++){
+    var x = document.getElementsByClassName(varNames[i]);
+    for (var j = 0; j < x.length; j++)
+    {
+      x[j].innerHTML = getVariable(skillVariableNames[i]);
+    }
+  }
+}
+
 function initializePage(){
   updatePageText();
 }
