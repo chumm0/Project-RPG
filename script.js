@@ -42,6 +42,11 @@ function updateVariableText(pChild){
   }
     
   pChild.innerHTML = newStr;
+  
+  var x = document.getElementsByClassName("combat");
+  for (var i = 0; i < x.length; i++){
+    x[i].innerHTML = getVariable("combat");
+  }
 }
 
 function initializePage(){
