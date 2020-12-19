@@ -1,9 +1,13 @@
 var skillpoints = 5;
 
 function updatePlayerFirstName(value){
+  alert("before parse char");
   var player = parseCharacter("player");
+  alert("after parse char");
   player.setFirstname(value);
+  alert("after set char name");
   storeCharacter(player);
+  alert("before store char");
 }
 
 function updatePlayerHouseName(value){
