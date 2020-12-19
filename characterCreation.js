@@ -3,6 +3,7 @@ var skillpoints = 5;
 function updatePlayerFirstName(value){
   alert("yah!");
   var player = JSON.parse(localStorage.getItem('player'));
+  alert("name " + player.getFirstName());
   player.setFirstName(value);
   alert("name " + player.getFirstName());
   localStorage.setItem('player', JSON.stringify(player));
