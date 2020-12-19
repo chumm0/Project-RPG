@@ -1,31 +1,6 @@
-//Variables
-var variableNames = [ 'firstname', 'lastname', 'gender' ];
-var skillVariableNames = [ 'combat', 'intelligence', 'social', 'skillpoints' ]
-
 function resetVariables(){
   localStorage.clear();
-  
-  localStorage[variableNames[0]] = 'Unknown';
-  localStorage[variableNames[1]] = 'Name';
-  localStorage[variableNames[2]] = 1
-  
-  localStorage[skillVariableNames[0]] = 0;
-  localStorage[skillVariableNames[1]] = 0;
-  localStorage[skillVariableNames[2]] = 0;
-  localStorage[skillVariableNames[3]] = 5;
-}
-
-function setVariable(varName, value){
-  localStorage[varName] = value;
-}
-
-function getVariable(varName){
-  return localStorage[varName];
-}
-
-function addToVariable(varName, value, linkNum){
-  var varAsInt = parseInt(localStorage[varName]);
-  localStorage[varName] = varAsInt + value;
+  //var player = JSON.parse(localStorage.getItem('player'));
 }
 
 function updatePageText(){
@@ -42,20 +17,19 @@ function updateVariableText(pChild){
   var str = pChild.innerHTML;
   var newStr = str;
   
-  newStr = newStr.replace(new RegExp('#firstname', 'g'), localStorage['firstname']);
-  newStr = newStr.replace(new RegExp('#lastname', 'g'), localStorage['lastname']);
+  newStr = newStr.replace(new RegExp('#firstname', 'g'), player.getFirstName());
+  newStr = newStr.replace(new RegExp('#lastname', 'g'), player.getHouseName());
     
-  if (localStorage['gender'] == 1){
+  if (player.getGender() == Gender.male){
     newStr = newStr.replace(new RegExp('#gender', 'g'), 'boy');
   }
-  else if (localStorage['gender'] == 2){
+  else{
     newStr = newStr.replace(new RegExp('#gender', 'g'), 'girl');
   }
   
-  for (var i = 0; i < skillVariableNames.length; i++){
-    var strToReplace = "#" + skillVariableNames[i];
-    newStr = newStr.replace(new RegExp(strToReplace, 'g'), localStorage[skillVariableNames[i]]);
-  }
+  newStr = newStr.replace(new RegExp('#combat', 'g'), player.getCombat());
+  newStr = newStr.replace(new RegExp('#intelligence', 'g'), player.getIntelligence());
+  newStr = newStr.replace(new RegExp('#social', 'g'), player.getSocial());
     
   pChild.innerHTML = newStr;
 }
