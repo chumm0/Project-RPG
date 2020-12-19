@@ -17,6 +17,11 @@ function getVariable(varName){
   return localStorage[varName];
 }
 
+function addToVariable(varName, value){
+  localStorage[varName] += value;
+  window.location.reload(false); 
+}
+
 function updatePageText(){
   var body = document.getElementById('svbanner').parentNode;
   var pChildren = body.getElementsByTagName('p');
