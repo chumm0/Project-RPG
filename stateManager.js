@@ -1,4 +1,5 @@
 function initializeStates(){
+  alert("1");
   var statesList;
   var numOfStates = getRandomInt(3) + 1; // at least 1 but no more than 3
   for (var stateCounter = 0; stateCounter < numOfStates; stateCounter++){ // for each state
@@ -16,8 +17,9 @@ function initializeStates(){
     var state = new State(generateStateName(), settlementsList)
     statesList.push(state);
   }
-  
+  alert("2");
   localStorage.setItem("statesList", JSON.stringify(statesList));
+  alert("3");
 }
 
 function printState(){
