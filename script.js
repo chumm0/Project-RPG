@@ -1,7 +1,7 @@
 function resetVariables(){
   localStorage.clear();
   
-  var player = new Character("Unknown", "Name", Gender.male, 0, 0, 0, Rank.peasant, 0);
+  var player = new Character("Unknown", "Name", Gender.male, 5, 0, 0, 0, Rank.noble, 0);
   localStorage.setItem("player", JSON.stringify(player));
 }
 
@@ -39,6 +39,11 @@ function updateVariableText(pChild){
 
 function updateVariableHTMLText(){
   var player = parseCharacter("player");
+  
+  var skillpointsElements = document.getElementsByClassName("skillpoints");
+  for(var i = 0; i < skillpointsElements.length; i++){
+    skillpointsElements[i].innerHTML = player.getSkillpoints();
+  }
   
   var combatElements = document.getElementsByClassName("combat");
   for(var i = 0; i < combatElements.length; i++){
