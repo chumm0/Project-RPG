@@ -23,7 +23,7 @@ function initializeStates(){
 
 function printStates(){
   var statesList = parseStatesList("statesList");
-  var str = "States:\n";
+  var str = "Randomly Generated States:\n";
   for (var i = 0; i < statesList.length; i++){
     str += statesList[i].getName() + " has " + statesList[i].getSettlements().length + " settlements!\n";
   }
