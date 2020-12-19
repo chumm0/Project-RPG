@@ -4,6 +4,9 @@ function resetVariables(){
   localStorage['firstname'] = 'Unknown';
   localStorage['lastname'] = 'Name';
   localStorage['gender'] = 1;
+  localStorage['combat'] = 0;
+  localStorage['intelligence'] = 0;
+  localStorage['social'] = 0;
 }
 
 function setVariable(varName, value){
