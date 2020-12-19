@@ -39,8 +39,7 @@ function updateVariableText(pChild){
 
 function updateVariableHTMLText(){
   var player = parseCharacter("player");
-  var varNames = ["combat", "intelligence", "social"];
-  
+  alert("s");
   var combatElements = document.getElementsByClassName("combat");
   for(var i = 0; i < combatElements.length; i++){
     combatElements.innerHTML = player.getCombat();
@@ -55,6 +54,7 @@ function updateVariableHTMLText(){
   for(var i = 0; i < socialElements.length; i++){
     socialElements.innerHTML = player.getSocial();
   }
+  alert("t");
 }
 
 function initializePage(){
