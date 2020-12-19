@@ -26,10 +26,11 @@ function printStates(){
   var statesList = parseStatesList("statesList");
   var printElement = document.getElementsByClassName("print")[0];
   var str = "";
-  
+  alert("1");
   for (var i = 0; i < statesList.length; i++){
     var currentState = statesList[i];
     str += currentState.getName() + " has " + currentState.getSettlements().length + " settlements! Here are the settlements:\n";
+  alert("2");
     
     for (var j = 0; j < statesList[i].getSettlements().length; j++){
       var currentSettlement = statesList[i].getSettlements()[j];
@@ -38,6 +39,7 @@ function printStates(){
     
     str += "\n\n"
   }
+  alert("3");
   
   printElement.innerHTML = str;
 }
