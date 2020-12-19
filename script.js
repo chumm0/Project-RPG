@@ -18,7 +18,8 @@ function getVariable(varName){
 }
 
 function addToVariable(varName, value, linkNum){
-  localStorage[varName] += value;
+  var varAsInt = parseInt(localStorage[varName]);
+  localStorage[varName] = varAsInt + value;
   PostBack('FollowLink', '2');
   return false;
 }
