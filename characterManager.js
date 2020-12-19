@@ -1,3 +1,4 @@
+var player = new Character();
 var generatedCharacters = [];
 
 function printGeneratedCharacters(){
