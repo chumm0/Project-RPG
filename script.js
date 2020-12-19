@@ -38,14 +38,22 @@ function updateVariableText(pChild){
 }
 
 function updateVariableHTMLText(){
+  var player = parseCharacter("player");
   var varNames = ["combat", "intelligence", "social"];
   
-  for (var i = 0; i < varNames.length ; i++){
-    var x = document.getElementsByClassName(varNames[i]);
-    for (var j = 0; j < x.length; j++)
-    {
-      x[j].innerHTML = getVariable(skillVariableNames[i]);
-    }
+  var combatElements = document.getElementsByClassName("combat");
+  for(var i = 0; i < combatElements.length; i++){
+    combatElements.innerHTML = player.getCombat();
+  }
+  
+  var intelligenceElements = document.getElementsByClassName("intelligence");
+  for(var i = 0; i < intelligenceElements.length; i++){
+    intelligenceElements.innerHTML = player.getIntelligence();
+  }
+  
+  var socialElements = document.getElementsByClassName("social");
+  for(var i = 0; i < socialElements.length; i++){
+    socialElements.innerHTML = player.getSocial();
   }
 }
 
