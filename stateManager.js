@@ -12,10 +12,10 @@ function initializeStates(){
       
       settlementsList.push(settlement);
     }
-    alert("1");
+    alert("1" + settlementsList.length);
     var state = new State(generateStateName(), settlementsList)
-    statesList.push(state);
     alert("2");
+    statesList.push(state);
   }
   localStorage.setItem("statesList", JSON.stringify(statesList));
   alert("3");
