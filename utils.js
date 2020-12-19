@@ -7,9 +7,6 @@ function parseCharacter(varName){
   return new Character(charDeserialized.firstname, charDeserialized.housename, charDeserialized.gender, charDeserialized.combat, charDeserialized.intelligence, charDeserialized.rank, charDeserialized.wealth);
 }
 
-function storeCharacter(varObj){
-  alert(varObj);
-  var str = "&quot;" + varObj + "&quot;"
-  alert(str);
-  localStorage.setItem(str, JSON.stringify(varObj));
+function storeCharacter(varName, varObj){
+  localStorage.setItem(varName, JSON.stringify(varObj));
 }
