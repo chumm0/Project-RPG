@@ -31,7 +31,7 @@ function printStates(){
     var currentState = statesList[i];
     str += currentState.getName() + " has " + currentState.getSettlements().length + " settlements! Here are the settlements:\n";
     
-    for (var j = 0; j < statesList[i].getSettlements().length; j++){
+    for (var j = 0; j < currentState.getSettlements().length; j++){
       var currentSettlement = currentState.getSettlements()[j];
       alert("1");
       str += currentSettlement.getName() + " is a ";
