@@ -23,7 +23,7 @@ function updateVariableText(pChild){
   alert(player.firstname);
   
   newStr = newStr.replace(new RegExp('#firstname', 'g'), "test");
-  alert(player.lastname)
+  alert(player.housename)
   newStr = newStr.replace(new RegExp('#lastname', 'g'), player.housename);
     
   if (player.getGender() == Gender.male){
