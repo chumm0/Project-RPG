@@ -20,7 +20,7 @@ Settlement.prototype.setSize = function(value) { this.size = value; }
 
 Settlement.prototype.getImportantCharacters = function(value) { this.importantCharacters = value; }
 
-Settlement.prototype.getSettlementSizeTitle = function() 
+Settlement.prototype.getSizeTitle = function() 
 { 
   switch(this.size){
     case Rank.village:
