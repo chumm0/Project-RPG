@@ -1,9 +1,9 @@
-function Settlement(name, settlements){
+function State(name, settlements){
   this.name = name;
   this.settlements = settlements;
 }
 
-Settlement.prototype.setName = function(value){ this.name = value; }
-Settlement.prototype.getName = function(){ return this.name; }
+State.prototype.setName = function(value){ this.name = value; }
+State.prototype.getName = function(){ return this.name; }
 
-Settlement.prototype.getSettlements = function(){ return this.settlements; }
+State.prototype.getSettlements = function(){ return this.settlements; }
