@@ -8,7 +8,7 @@ function generateMainAdvisor(){
 
 function printCharacter(character){
   var str = "Your Main Advisor: \n" + 
-      character.getFirstname() + " of House " + character.getLastname() + " (" + character.getRankTitle() + ")\n" +
+      character.getFirstname() + " of House " + character.getHousename() + " (" + character.getRankTitle() + ")\n" +
       "Combat: " + character.getCombat() + "\n" +
       "Intelligence: " + character.getIntelligence() + "\n" +
       "Social: " + character.getSocial();
