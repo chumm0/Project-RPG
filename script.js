@@ -2,7 +2,7 @@ function resetVariables(){
   localStorage.clear();
   
   var player = new Character("Unknown", "Name", Gender.male, 0, 0, 0, Rank.noble, 0);
-  localStorage.setItem('player', JSON.stringify(player));
+  localStorage.setItem("player", JSON.stringify(player));
 }
 
 function updatePageText(){
@@ -16,8 +16,7 @@ function updatePageText(){
 }
 
 function updateVariableText(pChild){
-  var playerDeserialized = JSON.parse(localStorage.getItem('player'));
-  var player = new Character(playerDeserialized.firstname, playerDeserialized.housename, playerDeserialized.gender, playerDeserialized.combat, playerDeserialized.intelligence, playerDeserialized.rank, playerDeserialized.wealth);
+  var player = parseCharacter("player")
   var str = pChild.innerHTML;
   var newStr = str;
   
