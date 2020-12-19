@@ -2,7 +2,7 @@ var skillpoints = 5;
 
 function updatePlayerFirstName(value){
   var player = parseCharacter("player");
-  player.firstname = value;
+  player.setFirstname(value);
   storeCharacter("player", player);
 }
 
