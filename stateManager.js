@@ -18,7 +18,7 @@ function initializeStates(){
     statesList.push(state);
   }
   alert("List: " + statesList);
-  localStorage.setItem("statesList", JSON.stringify(statesList));
+  storeVariable("statesList", statesList);
 }
 
 function printStates(){
