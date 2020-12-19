@@ -9,7 +9,7 @@ function parseCharacter(varName){
 
 function parseStatesList(varName){
   var statesListDeserialized = JSON.parse(localStorage.getItem(varName) || "[]");
-  var statesList;
+  var statesList = [];
   
   for (var i = 0; i < statesListDeserialized.length; i++){
     var state = new State(statesList[i].name, statesList[i].settlements);
