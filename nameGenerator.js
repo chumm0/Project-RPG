@@ -357,7 +357,7 @@ function generateStateName(statesList){
   var flag = 10
   var name = "";
   
-  while (!nameIsUnused || flag < 0){
+  while (!nameIsUnused && flag >= 0){
     name = stateNames[getRandomInt(stateNames.length)];
     
     for (var i = 0; i < statesList.length; i++){
