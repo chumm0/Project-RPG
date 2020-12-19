@@ -1,22 +1,26 @@
 var skillpoints = 5;
-var player = JSON.parse(localStorage.getItem('player'));
 
 function updatePlayerFirstName(value){
+  alert("yah!");
+  var player = JSON.parse(localStorage.getItem('player'));
   player.setFirstName(value);
   localStorage.setItem('player', JSON.stringify(player));
 }
 
 function updatePlayerHouseName(value){
+  var player = JSON.parse(localStorage.getItem('player'));
   player.setHouseName(value);
   localStorage.setItem('player', JSON.stringify(player));
 }
 
 function updatePlayerGender(value){
+  var player = JSON.parse(localStorage.getItem('player'));
   player.setGender(value);
   localStorage.setItem('player', JSON.stringify(player));
 }
 
 function addToPlayerCombat(value){
+  var player = JSON.parse(localStorage.getItem('player'));
   if (value > 0){
     if (skillpoints > 0){
       player.setCombat(player.getCombat() + 1);
@@ -34,6 +38,7 @@ function addToPlayerCombat(value){
 }
 
 function addToPlayerIntelligence(value){
+  var player = JSON.parse(localStorage.getItem('player'));
   if (value > 0){
     if (skillpoints > 0){
       player.setIntelligence(player.getIntelligence() + 1);
@@ -51,6 +56,7 @@ function addToPlayerIntelligence(value){
 }
 
 function addToPlayerSocial(value){
+  var player = JSON.parse(localStorage.getItem('player'));
   if (value > 0){
     if (skillpoints > 0){
       player.setSocial(player.getSocial() + 1);
