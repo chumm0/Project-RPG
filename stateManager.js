@@ -22,9 +22,11 @@ function initializeStates(){
 
 function printStates(){
   var statesList = parseStatesList();
+  alert("List: " + statesList);
   var str = "States:\n";
   for (var i = 0; i < statesList.length; i++){
-    str += statesList[i].getName();
+    alert("State:" + statesList[i]);
+    //str += statesList[i].getName();
   }
   
   alert(str);
