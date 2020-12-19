@@ -16,10 +16,6 @@ const Rank = {
 Object.freeze(Rank);
 
 class Character{
-  constructor(){
-    
-  }
-  
   constructor(firstname, housename, gender, combat, intelligence, social, rank, wealth){
     this.firstname = firstname;
     this.housename = housename;
@@ -33,7 +29,7 @@ class Character{
     this.wealth = wealth;
   }
   
-  setFirstName(firstname) { this.firstname = firstname; alert(firstname);}
+  setFirstName(firstname) { this.firstname = firstname; }
   getFirstName() { return this.firstname; }
   
   setHouseName(housename) { this.housename = housename; }
