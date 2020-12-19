@@ -55,3 +55,23 @@ Character.prototype.setRank = function(value) { this.rank = value; }
 
 Character.prototype.getWealth = function() { return this.wealth; }
 Character.prototype.setWealth = function(value) { this.wealth = value; }
+
+Character.prototype.getRankTitle = function() 
+{ 
+  switch(this.rank){
+    case Rank.peasant:
+      return "peasant";
+    case Rank.noble:
+      return "noble";
+    case Rank.baron:
+      return "baron";
+    case Rank.count:
+      return "count";
+    case Rank.duke:
+      return "duke";
+    case Rank.king:
+      return "king";
+    case Rank.emperor:
+      return "emperor";
+  }
+}
