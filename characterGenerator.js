@@ -205,7 +205,7 @@ const femaleNames = [
 function generateCharacters(){
   for (var i = 0; i < 20; i++){
     var gender = generateRandomGender();
-    var newCharacter = new Character(generateFirstName(gender), generateHouseName(), gender, Rank.noble, 0, 0, 0);
+    var newCharacter = new Character(generateFirstName(gender), generateHouseName(), gender, 0, 0, 0, 0, Rank.noble, 0);
     generatedCharacters.push(newCharacter);
   }
 }
