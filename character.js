@@ -15,15 +15,16 @@ const Rank = {
 };
 Object.freeze(Rank);
 
-function Character(firstname, housename, gender, combat, intelligence, social, rank, wealth){
+function Character(firstname, housename, gender, skillpoints, combat, intelligence, social, rank, wealth){
   this.firstname = firstname;
   this.housename = housename;
   this.gender = gender;
     
+  this.skillpoints = skillpoints;
   this.combat = combat;
   this.intelligence = intelligence;
   this.social = social;
-  
+    
   this.rank = rank;
   this.wealth = wealth;
 }
@@ -36,6 +37,9 @@ Character.prototype.setHousename = function(value) { this.housename = value; }
 
 Character.prototype.getGender = function() { return this.gender; }
 Character.prototype.setGender = function(value) { this.gender = value; }
+
+Character.prototype.getSkillpoints = function() { return this.skillpoints; }
+Character.prototype.setSkillpoints = function(value) { this.skillpoints = value; }
 
 Character.prototype.getCombat = function() { return this.combat; }
 Character.prototype.setCombat = function(value) { this.combat = value; }
