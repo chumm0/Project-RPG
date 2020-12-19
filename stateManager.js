@@ -15,7 +15,7 @@ function initializeStates(){
     
     var stateName = generateStateName();
     alert("1 " + stateName);
-    var state = new State(generateStateName(), settlementsList)
+    var state = new State(stateName, settlementsList)
     alert("2");
     statesList.push(state);
   }
