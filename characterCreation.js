@@ -1,21 +1,21 @@
 function addToSkill(varName, value, linkNum){
-  alert("Add");
   if (value > 0){
     if (parseInt(getVariable("skillpoints")) > 0){
       addToVariable(varName, value);
       addToVariable("skillpoints", -value);
-      PostBack('FollowLink', '2');
+      //PostBack('FollowLink', '2');
     }
   }
   else if (value < 0){
     if (parseInt(getVariable(varName)) > 0){
       addToVariable(varName, value);
       addToVariable("skillpoints", -value);
-      PostBack('FollowLink', '2');
+      //PostBack('FollowLink', '2');
     }
   }
   
-  return false;
+  updateVariableHTMLText()
+  //return false;
 }
 
 function updateVariableHTMLText(){
