@@ -353,17 +353,17 @@ function generateSettlementName(){
 }
 
 function generateStateName(statesList){
-  var nameIsUnused = false;
+  var nameIsUsed = true;
   var flag = 10
   var name = "";
-  alert(statesList.length);
   
-  while (!nameIsUnused){
+  while (!nameIsUsed){
     name = stateNames[getRandomInt(stateNames.length)];
+    nameIsUsed = false;
     
     for (var i = 0; i < statesList.length; i++){
-      if (statesList[i].getName() != name){
-        nameIsUnused = true;
+      if (statesList[i].getName() == name){
+        nameIsUsed = true;
       }
     }
     
