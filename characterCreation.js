@@ -1,4 +1,5 @@
 function addToSkill(varName, value, linkNum){
+  alert("Add");
   if (value > 0){
     if (parseInt(getVariable("skillpoints")) > 0){
       addToVariable(varName, value);
