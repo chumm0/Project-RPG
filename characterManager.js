@@ -1,5 +1,3 @@
-var player = new Character(getVariable("firstname"), getVariable("lastname"), getVariable("gender"), Rank.noble, getVariable("combat"), getVariable("intelligence"), getVariable("social"));
-
 var generatedCharacters = [];
 
 function generateCharacters(){
@@ -10,13 +8,8 @@ function generateCharacters(){
 }
 
 function printGeneratedCharacters(){
-  var body = document.getElementById('svbanner').parentNode;
-  var paragraph = document.createElement("p");
-  var str = "";
-  body.appendChild(paragraph);
-  
-  for (var i = 0; i < 20; i++){
-    str += generatedCharacters[i].getFirstName() + " " + generatedCharacters[i].getLastName() + "\n";
+  for (var i = 0; i < 5; i++){
+    alert(generatedCharacters[i].getFirstName() + " " + generatedCharacters[i].getLastName());
   }
 }
 
