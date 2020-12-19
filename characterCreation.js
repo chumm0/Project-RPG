@@ -1,19 +1,19 @@
 function updatePlayerFirstName(value){
   var player = parseCharacter("player");
   player.setFirstname(value);
-  storeCharacter("player", player);
+  storeVariable("player", player);
 }
 
 function updatePlayerHouseName(value){
   var player = parseCharacter("player");
   player.setHousename(value);
-  storeCharacter("player", player);
+  storeVariable("player", player);
 }
 
 function updatePlayerGender(value){
   var player = parseCharacter("player");
   player.setGender(value);
-  storeCharacter("player", player);
+  storeVariable("player", player);
 }
 
 function addToPlayerSkill(skillName, value){
@@ -31,7 +31,7 @@ function addToPlayerSkill(skillName, value){
         player.setSocial(player.getSocial() + value);
         break;
     }
-    storeCharacter("player", player);
+    storeVariable("player", player);
     updateVariableHTMLText();
   }
 }
@@ -58,6 +58,6 @@ function subtractFromPlayerSkill(skillName, value){
       }
       break;
   }
-  storeCharacter("player", player);
+  storeVariable("player", player);
   updateVariableHTMLText();
 }
