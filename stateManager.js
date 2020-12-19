@@ -20,10 +20,8 @@ function initializeStates(){
   localStorage.setItem("statesList", JSON.stringify(statesList));
 }
 
-function printState(){
-  alert("1");
+function printStates(){
   var statesList = parseStatesList();
-  alert("2");
   var str = "States:\n";
   for (var i = 0; i < statesList.length; i++){
     str += statesList[i].getName() + " has " + statesList[i].getSettlements().length + " settlements!\n";
