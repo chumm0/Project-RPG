@@ -17,10 +17,10 @@ function getVariable(varName){
   return localStorage[varName];
 }
 
-function addToVariable(varName, value){
+function addToVariable(varName, value, linkNum){
   localStorage[varName] += value;
-  alert(varName + " is " + value);
-  window.location.reload(false); 
+  PostBack("FollowLink", "linkNum");
+  return false;
 }
 
 function updatePageText(){
