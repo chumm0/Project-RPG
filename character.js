@@ -14,7 +14,7 @@ const Rank = {
   emperor: 7
 };
 Object.freeze(Rank);
-
+/*
 class Character{
   constructor(firstname, housename, gender, combat, intelligence, social, rank, wealth){
     this.firstname = firstname;
@@ -29,8 +29,8 @@ class Character{
     this.wealth = wealth;
   }
 }
+*/
 
-/*
 function Character(firstname, housename, gender, combat, intelligence, social, rank, wealth){
   this.firstname = firstname;
   this.housename = housename;
@@ -67,4 +67,3 @@ Character.prototype.setRank = function(value) { this.rank = value; }
 
 Character.prototype.getWealth = function() { return this.wealth; }
 Character.prototype.setWealth = function(value) { this.wealth = value; }
-*/
