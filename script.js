@@ -24,10 +24,10 @@ function updateVariableText(pChild){
   newStr = newStr.replace(new RegExp('#lastname', 'g'), player.getHousename());
     
   if (player.getGender() == Gender.male){
-    newStr = newStr.replace(new RegExp('#gender', 'g'), 'boy');
+    newStr = newStr.replace(new RegExp('#gender', 'g'), 'male');
   }
   else{
-    newStr = newStr.replace(new RegExp('#gender', 'g'), 'girl');
+    newStr = newStr.replace(new RegExp('#gender', 'g'), 'female');
   }
   
   newStr = newStr.replace(new RegExp('#combat', 'g'), player.getCombat());
