@@ -22,7 +22,7 @@ function initializeStates(){
 }
 
 function printStates(){
-  var statesList = parseStatesList();
+  var statesList = parseStatesList("statesList");
   alert("List After: " + statesList.length);
   var str = "States:\n";
   for (var i = 0; i < statesList.length; i++){
