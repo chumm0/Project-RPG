@@ -8,6 +8,6 @@ function parseCharacter(varName){
 }
 
 function storeCharacter(varObj){
-  var str = "&quot;" + varObje + "&quot;"
+  var str = "&quot;" + varObj + "&quot;"
   localStorage.setItem(str, JSON.stringify(varObj));
 }
