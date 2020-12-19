@@ -1,7 +1,6 @@
 function initializeStates(){
   var statesList;
   var numOfStates = getRandomInt(3) + 1; // at least 1 but no more than 3
-  alert("1");
   for (var stateCounter = 0; stateCounter < numOfStates; stateCounter++){ // for each state
     var settlementsList;
     var numOfSettlements = getRandomInt(5) + 1; // at least 1 but no more than 5
@@ -10,10 +9,11 @@ function initializeStates(){
       var settlementName = generateSettlementName();
       var settlementSize = getRandomInt(3) + 1;
       var settlement = new Settlement(settlementName, settlementSize);
+  alert("1");
       
       settlementsList.push(settlement);
-    }
   alert("2");
+    }
     
     var state = new State(generateStateName(), settlementsList)
     statesList.push(state);
