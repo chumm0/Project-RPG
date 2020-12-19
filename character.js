@@ -14,22 +14,6 @@ const Rank = {
   emperor: 7
 };
 Object.freeze(Rank);
-/*
-class Character{
-  constructor(firstname, housename, gender, combat, intelligence, social, rank, wealth){
-    this.firstname = firstname;
-    this.housename = housename;
-    this.gender = gender;
-    
-    this.combat = combat;
-    this.intelligence = intelligence;
-    this.social = social;
-    
-    this.rank = rank;
-    this.wealth = wealth;
-  }
-}
-*/
 
 function Character(firstname, housename, gender, combat, intelligence, social, rank, wealth){
   this.firstname = firstname;
