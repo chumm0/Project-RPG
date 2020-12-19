@@ -39,22 +39,21 @@ function updateVariableText(pChild){
 
 function updateVariableHTMLText(){
   var player = parseCharacter("player");
-  alert("s");
+  
   var combatElements = document.getElementsByClassName("combat");
   for(var i = 0; i < combatElements.length; i++){
-    combatElements.innerHTML = player.getCombat();
+    combatElements[i].innerHTML = player.getCombat();
   }
   
   var intelligenceElements = document.getElementsByClassName("intelligence");
   for(var i = 0; i < intelligenceElements.length; i++){
-    intelligenceElements.innerHTML = player.getIntelligence();
+    intelligenceElements[i].innerHTML = player.getIntelligence();
   }
   
   var socialElements = document.getElementsByClassName("social");
   for(var i = 0; i < socialElements.length; i++){
-    socialElements.innerHTML = player.getSocial();
+    socialElements[i].innerHTML = player.getSocial();
   }
-  alert("t");
 }
 
 function initializePage(){
