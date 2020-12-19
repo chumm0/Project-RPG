@@ -15,13 +15,13 @@ function addToSkill(varName, value, linkNum){
   updateVariableHTMLText()
 }
 
-function updateVariableHTMLText(){
-  for (var i = 0; i < variableNames.length; i++){
-    var x = document.getElementsByClassName(variableNames[i]);
+function updateSkillVariableHTMLText(){
+  for (var i = 0; i < skillVariableNames.length; i++){
+    var x = document.getElementsByClassName(skillVariableNames[i]);
     
     for (var j = 0; j < x.length; j++)
     {
-      x[j].innerHTML = getVariable(variableNames[i]);
+      x[j].innerHTML = getVariable(skillVariableNames[i]);
     }
   }
 }
