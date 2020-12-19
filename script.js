@@ -1,5 +1,5 @@
 //Variables
-var variableNames = [ "firstname", "lastname", "gender", "combat", "intelligence", "social" ];
+var variableNames = [ 'firstname', 'lastname', 'gender', 'combat', 'intelligence', 'social' ];
 
 function resetVariables(){
   localStorage.clear();
@@ -35,6 +35,11 @@ function updatePageText(){
   { 
     updateVariableText(pChildren[i]);
   }
+  
+  for (var i = 0; i < variableNames.length; i++){
+    var x = document.getElementsByClassName(variableNames[i]);
+    x[i].innerHTML = getVariable(variableNames[i]);
+  }
 }
 
 function updateVariableText(pChild){
@@ -52,11 +57,6 @@ function updateVariableText(pChild){
   }
     
   pChild.innerHTML = newStr;
-  
-  for (var i = 0; i < variableNames.length; i++){
-    var x = document.getElementsByClassName(variableNames[i]);
-    x[i].innerHTML = getVariable(variableNames[i]);
-  }
 }
 
 function initializePage(){
