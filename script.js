@@ -16,9 +16,8 @@ function updatePageText(){
 }
 
 function updateVariableText(pChild){
-  var player = JSON.parse(localStorage.getItem('player'));
-  alert(player);
-  alert(player.firstname);
+  var playerDeserialized = JSON.parse(localStorage.getItem('player'));
+  var player = new Character(playerDeserialized.firstname, playerDeserialized.housename, playerDeserialized.gender, playerDeserialized.combat, playerDeserialized.intelligence, playerDeserialized.rank, playerDeserialized.wealth);
   var str = pChild.innerHTML;
   var newStr = str;
   
