@@ -1,28 +1,25 @@
 var skillpoints = 5;
 
 function updatePlayerFirstName(value){
-  alert("yah!");
-  var player = JSON.parse(localStorage.getItem('player'));
-  alert("name " + player.getFirstName());
-  player.setFirstName(value);
-  alert("name " + player.getFirstName());
-  localStorage.setItem('player', JSON.stringify(player));
+  var player = parseCharacter("player");
+  player.setFirstname(value);
+  storeCharacter(player);
 }
 
 function updatePlayerHouseName(value){
-  var player = JSON.parse(localStorage.getItem('player'));
-  player.setHouseName(value);
-  localStorage.setItem('player', JSON.stringify(player));
+  var player = parseCharacter("player");
+  player.setHousename(value);
+  storeCharacter(player);
 }
 
 function updatePlayerGender(value){
-  var player = JSON.parse(localStorage.getItem('player'));
+  var player = parseCharacter("player");
   player.setGender(value);
-  localStorage.setItem('player', JSON.stringify(player));
+  storeCharacter(player);
 }
 
 function addToPlayerCombat(value){
-  var player = JSON.parse(localStorage.getItem('player'));
+  var player = parseCharacter("player");
   if (value > 0){
     if (skillpoints > 0){
       player.setCombat(player.getCombat() + 1);
@@ -35,12 +32,12 @@ function addToPlayerCombat(value){
       skillpoints++;
     }
   }
-  localStorage.setItem('player', JSON.stringify(player));
+  storeCharacter(player);
   updateSkillVariableHTMLText()
 }
 
 function addToPlayerIntelligence(value){
-  var player = JSON.parse(localStorage.getItem('player'));
+  var player = parseCharacter("player");
   if (value > 0){
     if (skillpoints > 0){
       player.setIntelligence(player.getIntelligence() + 1);
@@ -53,12 +50,12 @@ function addToPlayerIntelligence(value){
       skillpoints++;
     }
   }
-  localStorage.setItem('player', JSON.stringify(player));
+  storeCharacter(player);
   updateSkillVariableHTMLText()
 }
 
 function addToPlayerSocial(value){
-  var player = JSON.parse(localStorage.getItem('player'));
+  var player = parseCharacter("player");
   if (value > 0){
     if (skillpoints > 0){
       player.setSocial(player.getSocial() + 1);
@@ -71,7 +68,7 @@ function addToPlayerSocial(value){
       skillpoints++;
     }
   }
-  localStorage.setItem('player', JSON.stringify(player));
+  storeCharacter(player);
   updateSkillVariableHTMLText()
 }
 
