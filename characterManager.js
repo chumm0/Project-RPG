@@ -9,7 +9,7 @@ function generateCharacters(){
 
 function printGeneratedCharacters(){
   for (var i = 0; i < 5; i++){
-    alert(generatedCharacters[i].getFirstName() + " " + generatedCharacters[i].getLastName());
+    alert(generatedCharacters[i].getFirstName() + " " + generatedCharacters[i].getHouseName());
   }
 }
 
