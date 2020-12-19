@@ -23,7 +23,7 @@ function Character(firstname, housename, gender, combat, intelligence, social, r
   this.combat = combat;
   this.intelligence = intelligence;
   this.social = social;
-    
+    alert(social);
   this.rank = rank;
   this.wealth = wealth;
 }
