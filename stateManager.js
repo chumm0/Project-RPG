@@ -17,7 +17,7 @@ function initializeStates(){
     var state = new State(stateName, settlementsList)
     statesList.push(state);
   }
-  alert("List Before: " + statesList.length);
+  
   storeVariable("statesList", statesList);
 }
 
