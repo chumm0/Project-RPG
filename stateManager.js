@@ -8,8 +8,8 @@ function initializeStates(){
     for (var settlementCounter = 0; settlementCounter < numOfSettlements; settlementCounter++){ // make settlements
       var settlementName = generateSettlementName();
       var settlementSize = getRandomInt(3) + 1;
-      var settlement = new Settlement(settlementName, settlementSize);
-      settlement.generateImportantCharacters();
+      var settlementImportantCharacters = generateCharacters();
+      var settlement = new Settlement(settlementName, settlementSize, settlementImportantCharacters);
       
       settlementsList.push(settlement);
     }
