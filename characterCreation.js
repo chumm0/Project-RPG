@@ -19,10 +19,12 @@ function updatePlayerGender(value){
 }
 
 function addToPlayerSkill(skillName, value){
+  alert("before add");
   if (skillpoints > 0){
     skillpoints--;
     switch(skillName){
       case "combat":
+        alert("after add");
         player.setCombat(player.getCombat() + value);
         break;
       case "intelligence":
@@ -37,7 +39,7 @@ function addToPlayerSkill(skillName, value){
   }
 }
 
-function subtractfromPlayerSkill(skillName, value){
+function subtractFromPlayerSkill(skillName, value){
   switch(skillName){
     case "combat":
       if(player.getCombat() > 0){
