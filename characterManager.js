@@ -2,10 +2,21 @@ var player = new Character(getVariable("firstname"), getVariable("lastname"), ge
 
 var generatedCharacters = [];
 
-function GenerateCharacters(){
-  for (int i = 0; i < 20; i++){
+function generateCharacters(){
+  for (var i = 0; i < 20; i++){
     var newCharacter = new Character(generateRandomName(), generateRandomName(), generateRandomGender(), Rank.noble, 0, 0, 0);
     generatedCharacters.push(newCharacter);
+  }
+}
+
+function printGeneratedCharacters(){
+  var body = document.getElementById('svbanner').parentNode;
+  var paragraph = document.createElement("p");
+  var str = "";
+  body.appendChild(paragraph);
+  
+  for (var i = 0; i < 20; i++){
+    str += generatedCharacters[i].getFirstName() + " " + generatedCharacters[i].getLastName() + "\n";
   }
 }
 
