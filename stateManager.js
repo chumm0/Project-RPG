@@ -35,10 +35,18 @@ function printStates(){
     
     for (var j = 0; j < settlementsList.length; j++){
       var currentSettlement = settlementsList[j];
-      str += currentSettlement.getName() + " - Here is a list of its important characters:<br>";
+      var importantCharactersList = parseCharactersList(currentSettlement.getImportantCharacters());
+      str += currentSettlement.getName() + " - Here is a list of its important characters:<br><br>";
+      
+      for (var k = 0; k < importantCharactersList.length; k++){
+        var currentImportantCharacter = importantCharactersList[k]
+        str += currentImportantCharacter.getFirstname() + " " + currentImportantCharacter.getLastname() + "<br>";
+      }
+      
+      str += "<br>"
     }
     
-    str += "<br><br><br>";
+    str += "<br><br>";
   }
   
   printElement.innerHTML = str;
