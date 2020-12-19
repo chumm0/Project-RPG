@@ -352,9 +352,22 @@ function generateSettlementName(){
   return name;
 }
 
-function generateStateName(){
+function generateStateName(statesList){
+  var nameIsUnused = false;
+  var flag = 10
   var name = "";
   
-  name = stateNames[getRandomInt(stateNames.length)];
+  while (!nameIsUnused || flag < 0){
+    name = stateNames[getRandomInt(stateNames.length)];
+    
+    for (var i = 0; i < statesList.length; i++){
+      if (statesList[i].getName() != name){
+        nameIsUnused = true;
+        break;
+      }
+    }
+    
+    flag--;
+  }
   return name;
 }
