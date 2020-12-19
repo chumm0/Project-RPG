@@ -7,6 +7,17 @@ function parseCharacter(varName){
   return new Character(charDeserialized.firstname, charDeserialized.housename, charDeserialized.gender, charDeserialized.skillpoints, charDeserialized.combat, charDeserialized.intelligence, charDeserialized.social, charDeserialized.rank, charDeserialized.wealth);
 }
 
+function parseSettlementsList(settlementsListDeserialized){
+  var settlementsList = [];
+  
+  for (var i = 0; i < settlementsListDeserialized.length; i++){
+    var settlement = new Settlement(settlementsListDeserialized[i].name, settlementsListDeserialized[i].size, settlementsListDeserialized[i].importantCharacters);
+    settlementsList.push(settlement);
+  }
+  
+  return settlementsList;
+}
+
 function parseStatesList(varName){
   var statesListDeserialized = JSON.parse(localStorage.getItem(varName) || "[]");
   var statesList = [];
