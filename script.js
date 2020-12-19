@@ -19,9 +19,10 @@ function updateVariableText(pChild){
   var player = parseCharacter("player")
   var str = pChild.innerHTML;
   var newStr = str;
-  
-  newStr = newStr.replace(new RegExp('#firstname', 'g'), player.getFirstName());
-  newStr = newStr.replace(new RegExp('#lastname', 'g'), player.getHouseName());
+  alert(player.firstname);
+  alert(player.getFirstname());
+  newStr = newStr.replace(new RegExp('#firstname', 'g'), player.getFirstname());
+  newStr = newStr.replace(new RegExp('#lastname', 'g'), player.getHousename());
     
   if (player.getGender() == Gender.male){
     newStr = newStr.replace(new RegExp('#gender', 'g'), 'boy');
