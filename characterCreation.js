@@ -19,13 +19,14 @@ function updatePlayerGender(value){
 }
 
 function addToPlayerSkill(skillName, value){
+  var player = parseCharacter("player");
   alert("before add");
   if (skillpoints > 0){
     skillpoints--;
     switch(skillName){
       case "combat":
-        alert("after add");
         player.setCombat(player.getCombat() + value);
+        alert("after add");
         break;
       case "intelligence":
         player.setIntelligence(player.getIntelligence() + value);
@@ -34,12 +35,13 @@ function addToPlayerSkill(skillName, value){
         player.setSocial(player.getSocial() + value);
         break;
     }
-    
+    storeCharacter("player", player);
     updateVariableHTMLText();
   }
 }
 
 function subtractFromPlayerSkill(skillName, value){
+  var player = parseCharacter("player");
   switch(skillName){
     case "combat":
       if(player.getCombat() > 0){
@@ -60,6 +62,6 @@ function subtractFromPlayerSkill(skillName, value){
       }
       break;
   }
-  
+  storeCharacter("player", player);
   updateVariableHTMLText();
 }
