@@ -20,13 +20,10 @@ function updateVariableText(pChild){
   var str = pChild.innerHTML;
   var newStr = str;
   
-  alert(player.firstname);
-  
-  newStr = newStr.replace(new RegExp('#firstname', 'g'), "test");
-  alert(player.housename)
+  newStr = newStr.replace(new RegExp('#firstname', 'g'), player.firstname);
   newStr = newStr.replace(new RegExp('#lastname', 'g'), player.housename);
     
-  if (player.getGender() == Gender.male){
+  if (player.gender == Gender.male){
     newStr = newStr.replace(new RegExp('#gender', 'g'), 'boy');
   }
   else{
