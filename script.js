@@ -52,9 +52,9 @@ function updateVariableText(pChild){
     newStr = newStr.replace(new RegExp('#gender', 'g'), 'girl');
   }
   
-  for (var i = 0; i < skillVariables.length; i++){
-    var strToReplace = "#" + skillVariables[i];
-    newStr = newStr.replace(new RegExp(strToReplace, 'g'), localStorage[skillVariables[i]]);
+  for (var i = 0; i < skillVariableNames.length; i++){
+    var strToReplace = "#" + skillVariableNames[i];
+    newStr = newStr.replace(new RegExp(strToReplace, 'g'), localStorage[skillVariableNames[i]]);
   }
     
   pChild.innerHTML = newStr;
