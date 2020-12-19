@@ -16,9 +16,9 @@ function updatePageText(){
 }
 
 function updateVariableText(pChild){
-  alert("before parse");
   var player = parseCharacter("player");
-  alert("after parse");
+  alert(player);
+  alert(player.firstname);
   var str = pChild.innerHTML;
   var newStr = str;
   
