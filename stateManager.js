@@ -34,11 +34,11 @@ function printStates(){
     for (var j = 0; j < statesList[i].getSettlements().length; j++){
       var currentSettlement = currentState.getSettlements()[j];
       alert("1");
-      str += currentSettlement.getName() + " is a " + currentSettlement.getSizeTitle() + ".\n";
+      str += currentSettlement.getName() + " is a ";
       alert("2");
     }
     
-    str += "\n\n"
+    str += "\n\n";
   }
   
   printElement.innerHTML = str;
