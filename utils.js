@@ -12,7 +12,7 @@ function parseStatesList(varName){
   var statesList = [];
   
   for (var i = 0; i < statesListDeserialized.length; i++){
-    var state = new State(statesList[i].name, statesList[i].settlements);
+    var state = new State(statesListDeserialized[i].name, statesListDeserialized[i].settlements);
     statesList.push(state);
   }
   
