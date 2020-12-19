@@ -1,6 +1,21 @@
 var skillpoints = 5;
 var player = JSON.parse(localStorage.getItem('player'));
 
+function updatePlayerFirstName(value){
+  player.setFirstName(value);
+  localStorage.setItem('player', JSON.stringify(player));
+}
+
+function updatePlayerHouseName(value){
+  player.setHouseName(value);
+  localStorage.setItem('player', JSON.stringify(player));
+}
+
+function updatePlayerGender(value){
+  player.setGender(value);
+  localStorage.setItem('player', JSON.stringify(player));
+}
+
 function addToPlayerCombat(value){
   if (value > 0){
     if (skillpoints > 0){
