@@ -34,7 +34,7 @@ function printStates(){
     for (var j = 0; j < currentState.getSettlements().length; j++){
       var currentSettlement = currentState.getSettlements()[j];
       alert("1");
-      str += currentSettlement.getName() + " is a ";
+      //str += currentSettlement.getName() + " is a ";
       alert("2");
     }
     
