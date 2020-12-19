@@ -1,5 +1,5 @@
 //Variables
-var variableNames = [ 'firstname', 'lastname', 'gender', 'combat', 'intelligence', 'social' ];
+var variableNames = [ 'firstname', 'lastname', 'gender', 'combat', 'intelligence', 'social', 'skillpoints' ];
 
 function resetVariables(){
   localStorage.clear();
@@ -10,6 +10,7 @@ function resetVariables(){
   localStorage[variableNames[3]] = 0;
   localStorage[variableNames[4]] = 0;
   localStorage[variableNames[5]] = 0;
+  localStorage[variableNames[6]] = 5;
 }
 
 function setVariable(varName, value){
