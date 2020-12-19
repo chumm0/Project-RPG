@@ -21,6 +21,7 @@ function initializeStates(){
 }
 
 function printStates(){
+  alert("in");
   var statesList = parseStatesList();
   alert("List: " + statesList);
   var str = "States:\n";
