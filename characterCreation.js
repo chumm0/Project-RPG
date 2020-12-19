@@ -4,6 +4,7 @@ function updatePlayerFirstName(value){
   alert("yah!");
   var player = JSON.parse(localStorage.getItem('player'));
   player.setFirstName(value);
+  alert("name " + player.getFirstName());
   localStorage.setItem('player', JSON.stringify(player));
 }
 
