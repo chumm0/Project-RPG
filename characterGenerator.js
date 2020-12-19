@@ -202,14 +202,6 @@ const femaleNames = [
   "Partha"
 ];
 
-function generateCharacters(){
-  for (var i = 0; i < 20; i++){
-    var gender = generateRandomGender();
-    var newCharacter = new Character(generateFirstName(gender), generateHouseName(), gender, 0, 0, 0, 0, generateRank(Rank.peasant, Rank.duke), 0);
-    generatedCharacters.push(newCharacter);
-  }
-}
-
 function generateFirstName(gender){
   var firstName = "";
   
