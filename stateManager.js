@@ -13,7 +13,7 @@ function initializeStates(){
       settlementsList.push(settlement);
     }
     
-    var stateName = generateStateName();
+    var stateName = generateStateName(statesList);
     var state = new State(stateName, settlementsList)
     statesList.push(state);
   }
