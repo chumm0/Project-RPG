@@ -17,11 +17,11 @@ function initializeStates(){
     var state = new State(stateName, settlementsList)
     statesList.push(state);
   }
+  alert("List: " + statesList);
   localStorage.setItem("statesList", JSON.stringify(statesList));
 }
 
 function printStates(){
-  alert("in");
   var statesList = parseStatesList();
   alert("List: " + statesList);
   var str = "States:\n";
