@@ -15,41 +15,39 @@ const Rank = {
 };
 Object.freeze(Rank);
 
-class Character{
-  constructor(firstname, housename, gender, combat, intelligence, social, rank, wealth){
-    this.firstname = firstname;
-    this.housename = housename;
-    this.gender = gender;
+function Character(firstname, housename, gender, combat, intelligence, social, rank, wealth){
+  this.firstname = firstname;
+  this.housename = housename;
+  this.gender = gender;
     
-    this.combat = combat;
-    this.intelligence = intelligence;
-    this.social = social;
+  this.combat = combat;
+  this.intelligence = intelligence;
+  this.social = social;
     
-    this.rank = rank;
-    this.wealth = wealth;
-  }
-  
-  setFirstName(firstname) { this.firstname = firstname; }
-  getFirstName() { return this.firstname; }
-  
-  setHouseName(housename) { this.housename = housename; }
-  getHouseName() { return this.housename; }
-  
-  setGender(gender) { this.gender = gender; }
-  getGender() { return this.gender; }
-  
-  setCombat(combat) { this.combat = combat; }
-  getCombat() { return this.combat; }
-  
-  setIntelligence(intelligence) { this.intelligence = intelligence; }
-  getIntelligence() { return this.intelligence; }
-  
-  setSocial(social) { this.social = social; }
-  getSocial() { return this.social }
-  
-  setRank(rank) { this.rank = rank; }
-  getRank() { return this.rank; }
-  
-  getWealth(wealth) { this.wealth = wealth; }
-  getWealth() { return this.wealth; }
+  this.rank = rank;
+  this.wealth = wealth;
 }
+
+Character.prototype.getFirstname = function(){ return this.firstname; }
+Character.prototype.setFirstname = function(value) { this.firstname = value; }
+
+Character.prototype.getHousename = function() { return this.housename; }
+Character.prototype.setHousename = function(value) { this.housename = value; }
+
+Character.prototype.getGender = function() { return this.gender; }
+Character.prototype.setGender = function(value) { this.gender = value; }
+
+Character.prototype.getCombat = function() { return this.combat; }
+Character.prototype.setCombat = function(value) { this.combat = value; }
+
+Character.prototype.getIntelligence = function() { return this.intelligence; }
+Character.prototype.setIntelligence = function(value) { this.intelligence = value; }
+
+Character.prototype.getSocial = function() { return this.social; }
+Character.prototype.setSocial = function(value) { this.social = value; }
+
+Character.prototype.getRank = function() { return this.rank; }
+Character.prototype.setRank = function(value) { this.rank = value; }
+
+Character.prototype.getWealth = function() { return this.wealth; }
+Character.prototype.setWealth = function(value) { this.wealth = value; }
