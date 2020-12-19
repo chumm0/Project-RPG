@@ -1,6 +1,8 @@
 function resetVariables(){
   localStorage.clear();
-  //var player = JSON.parse(localStorage.getItem('player'));
+  
+  var player = new Character();
+  localStorage.setItem('player', JSON.stringify(player));
 }
 
 function updatePageText(){
@@ -14,6 +16,7 @@ function updatePageText(){
 }
 
 function updateVariableText(pChild){
+  var player = JSON.parse(localStorage.getItem('player'));
   var str = pChild.innerHTML;
   var newStr = str;
   
@@ -36,5 +39,4 @@ function updateVariableText(pChild){
 
 function initializePage(){
   updatePageText();
-  alert(player.getFirstName());
 }
