@@ -1,7 +1,10 @@
 var generatedCharacters = [];
 
 function printGeneratedCharacters(){
-  for (var i = 0; i < 5; i++){
-    alert(generatedCharacters[i].getFirstName() + " " + generatedCharacters[i].getHouseName() + " " + generatedCharacters[i].getRank());
+  var str = "";
+  for (var i = 0; i < generatedCharacters.length; i++){
+    str += generatedCharacters[i].getFirstname() + " " + generatedCharacters[i].getHousename() + " - " + generatedCharacters[i].getRankTitle() + "\n";
   }
+  
+  alert(str);
 }
