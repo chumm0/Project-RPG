@@ -1,6 +1,5 @@
 function addToVariableWithButton(varName, value, linkNum){
-  var varAsInt = parseInt(localStorage[varName]);
-  localStorage[varName] = varAsInt + value;
+  addToVariable(varName, value);
   PostBack('FollowLink', '2');
   return false;
 }
