@@ -20,19 +20,19 @@ function updateVariableText(pChild){
   var str = pChild.innerHTML;
   var newStr = str;
   
-  newStr = newStr.replace(new RegExp('#firstname', 'g'), player.firstname);
-  newStr = newStr.replace(new RegExp('#lastname', 'g'), player.housename);
+  newStr = newStr.replace(new RegExp('#firstname', 'g'), player.getFirstname());
+  newStr = newStr.replace(new RegExp('#lastname', 'g'), player.getHousename());
     
-  if (player.gender == Gender.male){
+  if (player.getGender() == Gender.male){
     newStr = newStr.replace(new RegExp('#gender', 'g'), 'boy');
   }
   else{
     newStr = newStr.replace(new RegExp('#gender', 'g'), 'girl');
   }
   
-  newStr = newStr.replace(new RegExp('#combat', 'g'), player.combat);
-  newStr = newStr.replace(new RegExp('#intelligence', 'g'), player.intelligence);
-  newStr = newStr.replace(new RegExp('#social', 'g'), player.social);
+  newStr = newStr.replace(new RegExp('#combat', 'g'), player.getCombat());
+  newStr = newStr.replace(new RegExp('#intelligence', 'g'), player.getIntelligence());
+  newStr = newStr.replace(new RegExp('#social', 'g'), player.getSocial());
     
   pChild.innerHTML = newStr;
 }
