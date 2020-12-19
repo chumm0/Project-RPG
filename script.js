@@ -1,12 +1,15 @@
 //Variables
+var variableNames = [ "firstname", "lastname", "gender", "combat", "intelligence", "social" ];
+
 function resetVariables(){
   localStorage.clear();
-  localStorage['firstname'] = 'Unknown';
-  localStorage['lastname'] = 'Name';
-  localStorage['gender'] = 1;
-  localStorage['combat'] = 0;
-  localStorage['intelligence'] = 0;
-  localStorage['social'] = 0;
+  
+  localStorage[variableNames[0]] = 'Unknown';
+  localStorage[variableNames[1]] = 'Name';
+  localStorage[variableNames[2]] = 1;
+  localStorage[variableNames[3]] = 0;
+  localStorage[variableNames[4]] = 0;
+  localStorage[variableNames[5]] = 0;
 }
 
 function setVariable(varName, value){
@@ -50,9 +53,9 @@ function updateVariableText(pChild){
     
   pChild.innerHTML = newStr;
   
-  var x = document.getElementsByClassName("combat");
-  for (var i = 0; i < x.length; i++){
-    x[i].innerHTML = getVariable("combat");
+  for (var i = 0; i < variableNames.length; i++){
+    var x = document.getElementsByClassName(variableNames[i]);
+    x[i].innerHTML = getVariable(variableNames[i]);
   }
 }
 
