@@ -33,12 +33,10 @@ function printStates(){
     
     for (var j = 0; j < currentState.getSettlements().length; j++){
       var currentSettlement = currentState.getSettlements()[j];
-      alert("1");
-      str += currentSettlement.name + "\n";
-      alert("2");
+      str += currentSettlement.name + "<br>";
     }
     
-    str += "\n\n";
+    str += "<br><br>";
   }
   
   printElement.innerHTML = str;
