@@ -17,10 +17,10 @@ function updatePageText(){
 
 function updateVariableText(pChild){
   var player = parseCharacter("player");
-  alert(player);
-  alert(player.firstname);
   var str = pChild.innerHTML;
   var newStr = str;
+  
+  alert(player.firstname);
   
   newStr = newStr.replace(new RegExp('#firstname', 'g'), "test");
   newStr = newStr.replace(new RegExp('#lastname', 'g'), player.housename);
