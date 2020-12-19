@@ -23,8 +23,6 @@ function getVariable(varName){
 function addToVariable(varName, value, linkNum){
   var varAsInt = parseInt(localStorage[varName]);
   localStorage[varName] = varAsInt + value;
-  PostBack('FollowLink', '2');
-  return false;
 }
 
 function updatePageText(){
@@ -34,15 +32,6 @@ function updatePageText(){
   for (var i = 0; i < pChildren.length; i++)
   { 
     updateVariableText(pChildren[i]);
-  }
-  
-  for (var i = 0; i < variableNames.length; i++){
-    var x = document.getElementsByClassName(variableNames[i]);
-    
-    for (var j = 0; j < x.length; j++)
-    {
-      x[j].innerHTML = getVariable(variableNames[i]);
-    }
   }
 }
 
