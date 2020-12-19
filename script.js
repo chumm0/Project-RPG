@@ -1,7 +1,7 @@
 function resetVariables(){
   localStorage.clear();
   
-  var player = new Character();
+  var player = new Character("Unknown", "Name", Gender.male, 0, 0, 0, Rank.noble, 0);
   localStorage.setItem('player', JSON.stringify(player));
 }
 
