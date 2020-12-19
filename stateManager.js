@@ -1,8 +1,8 @@
 function initializeStates(){
-  var statesList;
+  var statesList = [];
   var numOfStates = getRandomInt(3) + 1; // at least 1 but no more than 3
   for (var stateCounter = 0; stateCounter < numOfStates; stateCounter++){ // for each state
-    var settlementsList;
+    var settlementsList = [];
     var numOfSettlements = getRandomInt(5) + 1; // at least 1 but no more than 5
     
     for (var settlementCounter = 0; settlementCounter < numOfSettlements; settlementCounter++){ // make settlements
