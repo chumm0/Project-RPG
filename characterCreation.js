@@ -8,7 +8,7 @@ function updatePlayerFirstName(value){
 
 function updatePlayerHouseName(value){
   var player = parseCharacter("player");
-  player.housename = value;
+  player.setHousename(value);
   storeCharacter("player", player);
 }
 
@@ -33,7 +33,7 @@ function addToPlayerCombat(value){
     }
   }
   storeCharacter(player);
-  updateSkillVariableHTMLText()
+  updateVariableHTMLText()
 }
 
 function addToPlayerIntelligence(value){
@@ -51,7 +51,7 @@ function addToPlayerIntelligence(value){
     }
   }
   storeCharacter(player);
-  updateSkillVariableHTMLText()
+  updateVariableHTMLText()
 }
 
 function addToPlayerSocial(value){
@@ -69,16 +69,5 @@ function addToPlayerSocial(value){
     }
   }
   storeCharacter(player);
-  updateSkillVariableHTMLText()
-}
-
-function updateSkillVariableHTMLText(){
-  for (var i = 0; i < skillVariableNames.length; i++){
-    var x = document.getElementsByClassName(skillVariableNames[i]);
-    
-    for (var j = 0; j < x.length; j++)
-    {
-      x[j].innerHTML = getVariable(skillVariableNames[i]);
-    }
-  }
+  updateVariableHTMLText()
 }
