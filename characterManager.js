@@ -1,10 +1,6 @@
-var generatedCharacters = [];
+var mainAdvisor;
 
-function printGeneratedCharacters(){
-  var str = "Randomly Generated Characters:\n";
-  for (var i = 0; i < generatedCharacters.length; i++){
-    str += generatedCharacters[i].getFirstname() + " " + generatedCharacters[i].getHousename() + " - " + generatedCharacters[i].getRankTitle() + "\n";
-  }
-  
-  alert(str);
+function generateMainAdvisor(){
+  var gender = generateRandomGender();
+  mainAdvisor = new Character(generateFirstName(gender), generateHouseName(), gender, 0, 1, 1, 2, Rank.peasant, 0);
 }
