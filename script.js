@@ -36,4 +36,5 @@ function updateVariableText(pChild){
 
 function initializePage(){
   updatePageText();
+  alert(player.getFirstName());
 }
