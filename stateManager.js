@@ -36,6 +36,7 @@ function printStates(){
     for (var j = 0; j < settlementsList.length; j++){
       var currentSettlement = settlementsList[j];
       var importantCharactersList = parseCharactersList(currentSettlement.getImportantCharacters());
+      alert("parsed c list");
       str += currentSettlement.getName() + " - Here is a list of its important characters:<br><br>";
       
       for (var k = 0; k < importantCharactersList.length; k++){
