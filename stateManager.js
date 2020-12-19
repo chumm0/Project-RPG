@@ -24,10 +24,20 @@ function initializeStates(){
 
 function printStates(){
   var statesList = parseStatesList("statesList");
-  var str = "States:\n";
+  var printElement = document.getElementsByClassName("print")[0];
+  var str = "";
+  
   for (var i = 0; i < statesList.length; i++){
-    str += statesList[i].getName() + " has " + statesList[i].getSettlements().length + " settlements!\n";
+    var currentState = statesList[i];
+    str += currentState.getName() + " has " + currentState.getSettlements().length + " settlements! Here are the settlements:\n";
+    
+    for (var j = 0; j < statesList[i].getSettlements().length; j++){
+      var currentSettlement = statesList[i].getSettlements()[j];
+      str += currentSettlement.getName() + " is a " + currentSettlement.getSizeTitle(); + ".";
+    }
+    
+    str += "\n\n"
   }
   
-  alert(str);
+  printElement.innerHTML = str;
 }
