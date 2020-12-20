@@ -41,3 +41,16 @@ function createStates(maxStates, tier){
   
   return settlementsList;
 }
+
+function printPoliticalEntities(){
+  var statesList = parseStatesList("statesList");
+  var str = "";
+  
+  for (var kingdomNum = 0; kingdomNum < statesList.length; kingdomNum++){
+    var currentKingdom = statesList[kingdomNum];
+    str += currentKingdom.printState() + "<br><br>";
+  }
+  
+  var printElement = document.getElementsByClassName("print")[0];
+  printElement.innerHTML = str;
+}
