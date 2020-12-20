@@ -28,6 +28,7 @@ function createStates(maxStates, tier, liege){
       state.setDirectVassalStates(vassalStates);
     }
     alert("s");
+    alert("t");
     statesList.push(state);
   }
   
