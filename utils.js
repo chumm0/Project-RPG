@@ -30,6 +30,7 @@ function parseSettlementsList(settlementsListDeserialized){
 }
 
 function parseStatesList(varName){
+  alert("in");
   var statesListDeserialized = JSON.parse(localStorage.getItem(varName) || "[]");
   var statesList = [];
   
