@@ -10,8 +10,8 @@ function createState(maxStates, tier, liege){
   
   for (var i = 0; i < maxStates; i++){
     var stateName = generateStateName();
-    var state = new State(stateName, tier, liege);
     alert("1");
+    var state = new State(stateName, tier, liege);
     var vassals = [];
     if (tier > 2){
       for (var j = 0; j < maxStates; j++){
