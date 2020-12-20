@@ -48,7 +48,7 @@ function storeVariable(varName, varObj){
 
 function storeCyclicObject(varName, varObj){
   var seen = [];
-  var objString = JSON.stringify(kingdomsList, function(key, val) {
+  var objString = JSON.stringify(varObj, function(key, val) {
     if (val != null && typeof val == "object") {
       if (seen.indexOf(val) >= 0) {
         return;
