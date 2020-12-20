@@ -48,7 +48,7 @@ function printPoliticalEntities(){
   
   for (var kingdomNum = 0; kingdomNum < statesList.length; kingdomNum++){
     var currentKingdom = statesList[kingdomNum];
-    alert("before parse");
+    alert(currentKingdom.getDirectVassals());
     var duchyList = parseStatesList("", currentKingdom.getDirectVassals());
     alert("after parse");
     alert(duchyList[0].getName());
