@@ -63,15 +63,12 @@ function parseStatesList(varName, varObj){
   var statesList = [];
   
   if (varObj == null){
-  alert("from storage");
     statesListDeserialized = JSON.parse(localStorage.getItem(varName) || "[]");
   }
   else{
-  alert("not from storage");
-    statesListDeserialized = JSON.parse(varObj);
+    statesListDeserialized = varObj;
   }
   
-  alert("going to for loop");
   for (var i = 0; i < statesListDeserialized.length; i++){
     var state = new State(statesListDeserialized[i].name, statesListDeserialized[i].stateTier, statesListDeserialized[i].directVassals);
     statesList.push(state);
