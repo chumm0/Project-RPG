@@ -1,46 +1,64 @@
-function getRandomInt(max) {
-  return Math.floor(Math.random() * Math.floor(max));
+//STATES
+
+const StateTier = {
+  settlement: 1,
+  county: 2,
+  duchy: 3,
+  kingdom: 4,
+};
+Object.freeze(StateTier);
+
+function State(name, stateTier, directLiegeState){
+  this.name = name;
+  this.stateTier = stateTier;
+  this.directLiegeState = directLiegeState;
 }
 
-function parseCharacter(varName){
-  var charDeserialized = JSON.parse(localStorage.getItem(varName));
-  return new Character(charDeserialized.firstname, charDeserialized.housename, charDeserialized.gender, charDeserialized.skillpoints, charDeserialized.combat, charDeserialized.intelligence, charDeserialized.social, charDeserialized.rank, charDeserialized.wealth);
+State.prototype.setName = function(value){ this.name = value; }
+State.prototype.getName = function(){ return this.name; }
+
+State.prototype.getStateTier = function() { return this.stateTier; }
+
+State.prototype.setDirectLiegeState = function(value){ this.directLiegeState = value; }
+State.prototype.getDirectLiegeState = function(){ return this.directLiegeState; }
+
+State.prototype.setDirectVassalStates = function(value){ this.directVassalStates = value; }
+State.prototype.getDirectVassalStates = function(){ return this.directVassalStates; }
+
+State.prototype.print = function()
+{
+  return this.name;
 }
 
-function parseCharactersList(charactersListDeserialized){
-  var charactersList = [];
+//SETTLEMENTS
+
+const SettlementSize = {
+  village: 1,
+  town: 2,
+  city: 3,
+};
+Object.freeze(SettlementSize);
+
+function Settlement(name, stateTier, directLiegeState, size, importantCharacters){
+  State.call(name, stateTier, directLiegeState);
   
-  for (var i = 0; i < charactersListDeserialized.length; i++){
-    var character = new Character(charactersListDeserialized[i].firstname, charactersListDeserialized[i].housename, charactersListDeserialized[i].gender, charactersListDeserialized[i].skillpoints, charactersListDeserialized[i].combat, charactersListDeserialized[i].intelligence, charactersListDeserialized[i].social, charactersListDeserialized[i].rank, charactersListDeserialized[i].wealth);
-    charactersList.push(character);
+  this.size = size;
+  this.importantCharacters = importantCharacters;
+}
+
+Settlement.prototype.getSize = function(){ return this.size; }
+Settlement.prototype.setSize = function(value) { this.size = value; }
+
+Settlement.prototype.getImportantCharacters = function() { return this.importantCharacters; }
+
+Settlement.prototype.getSizeTitle = function() 
+{ 
+  switch(this.size){
+    case Rank.village:
+      return "village";
+    case Rank.town:
+      return "town";
+    case Rank.city:
+      return "city";
   }
-  
-  return charactersList;
-}
-
-function parseSettlementsList(settlementsListDeserialized){
-  var settlementsList = [];
-  
-  for (var i = 0; i < settlementsListDeserialized.length; i++){
-    var settlement = new Settlement(settlementsListDeserialized[i].name, settlementsListDeserialized[i].size, settlementsListDeserialized[i].importantCharacters);
-    settlementsList.push(settlement);
-  }
-  
-  return settlementsList;
-}
-
-function parseStatesList(varName){
-  var statesListDeserialized = JSON.parse(localStorage.getItem(varName) || "[]");
-  var statesList = [];
-  
-  for (var i = 0; i < statesListDeserialized.length; i++){
-    var state = new State(statesListDeserialized[i].name, statesListDeserialized[i].stateTier, statesListDeserialized[i].directLiegeState);
-    statesList.push(state);
-  }
-  
-  return statesList;
-}
-
-function storeVariable(varName, varObj){
-  localStorage.setItem(varName, JSON.stringify(varObj));
 }
