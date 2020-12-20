@@ -21,6 +21,7 @@ function parseCharactersList(charactersListDeserialized){
 }
 
 function parseSettlementsList(settlementsListDeserialized){
+  alert("in");
   var settlementsList = [];
   alert(settlementsListDeserialized[i].importantCharacters);
   for (var i = 0; i < settlementsListDeserialized.length; i++){
