@@ -43,9 +43,7 @@ function createStates(maxStates, tier){
 }
 
 function printPoliticalEntities(){
-  alert("before kingdom parse");
-  var statesList = parseStatesList("statesList", null);
-  alert("after kingdom parse " + statesList);
+  var statesList = parseStatesList("kingdomsList", null);
   var str = "";
   
   for (var kingdomNum = 0; kingdomNum < statesList.length; kingdomNum++){
