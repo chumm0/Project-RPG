@@ -43,26 +43,7 @@ function parseStatesList(varName){
   return statesList;
 }
 
-function storeVariable(varName, varObj){
+function storeObject(varName, varObj){
   var objString = JSON.stringify(varObj);
-  localStorage.setItem(varName, objString);
-}
-
-function storeCyclicObject(varName, varObj){ 
-  var cache = [];
-  
-  var objString = JSON.stringify(varObj, function(key, value) {
-    if (typeof value === 'object' && value !== null) {
-      if (cache.indexOf(value) !== -1) {
-        // Circular reference found, discard key
-        return;
-      }
-      // Store value in our collection
-      cache.push(value);
-    }
-    return value;
-  });
-  cache = null; // Enable garbage collection
-  
   localStorage.setItem(varName, objString);
 }
