@@ -1,11 +1,7 @@
 function generatePoliticalEntities(){
-  alert("1");
   var maxStates = getRandomInt(7) + 4;
-  alert("in");
   var kingdomsList = createStates(maxStates, StateTier.kingdom);
-  alert("out");
   storeObject("kingdomsList", kingdomsList);
-  alert("store");
 }
 
 function createStates(maxStates, tier){
@@ -44,6 +40,35 @@ function createStates(maxStates, tier){
   }
   
   return settlementsList;
+}
+
+function printPoliticalEntities(){
+  var kingdomsList = parseStatesList("kingdomsList", null);
+  var str = "";
+  
+  for (var kingdomNum = 0; kingdomNum < kingdomsList.length; kingdomNum++){
+    var currentKingdom = kingdomsList[kingdomNum];
+    var duchyList = parseStatesList("", currentKingdom.getDirectVassals());
+    str += currentKingdom.printState() + " Here are its direct vassals: <br><br>";
+    
+    for (var duchyNum = 0; duchyNum < duchyList.length; duchyNum++){
+      var currentDuchy = duchyList[duchyNum];
+      var countyList = parseStatesList("", currentDuchy.getDirectVassals());
+      str += currentDuchy.printState() + " Here are its direct vassals: <br><br>";
+      
+      for (var countyNum = 0; countyNum < countyList.length; countyNum++){
+        var currentCounty = countyList[countyNum];
+        str += currentCounty.printState() + "<br>";
+      }
+      
+      str += "<br>";
+    }
+    
+    str += "<br>";
+  
+  var printElement = document.getElementsByClassName("print")[0];
+  printElement.innerHTML = str;
+  }
 }
 
 function parseStatesList(varName, varObj){
