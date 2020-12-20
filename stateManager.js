@@ -1,12 +1,13 @@
 function initializePoliticalWorld(){
   var maxStates = getRandomInt(7) + 4;
+  alert("in");
   var statesList = createStates(maxStates, StateTier.kingdom, null);
   storeVariable("statesList", statesList);
 }
 
 function createStates(maxStates, tier, liege){
-  var statesList = [];
   alert(tier);
+  var statesList = [];
   for (var i = 0; i < maxStates; i++){
     var stateName = generateStateName(statesList);
     var state = new State(stateName, tier, liege);
