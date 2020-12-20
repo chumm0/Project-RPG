@@ -42,8 +42,21 @@ function parseStatesList(varName){
 }
 
 function storeVariable(varName, varObj){
-  alert("Start");
   var objString = JSON.stringify(varObj);
-  alert("End");
+  localStorage.setItem(varName, objString);
+}
+
+function storeCyclicObject(varName, varObj){
+  var seen = [];
+  var objString = JSON.stringify(kingdomsList, function(key, val) {
+    if (val != null && typeof val == "object") {
+      if (seen.indexOf(val) >= 0) {
+        return;
+      }
+      seen.push(val);
+    }
+    return val;
+  });  
+  
   localStorage.setItem(varName, objString);
 }
