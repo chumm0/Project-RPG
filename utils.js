@@ -9,8 +9,9 @@ function parseCharacter(varName){
 
 function parseCharactersList(charactersListDeserialized){
   var charactersList = [];
+  
+  alert(charactersListDeserialized);
   for (var i = 0; i < charactersListDeserialized.length; i++){
-  alert("in forloop");
     var character = new Character(charactersListDeserialized[i].firstname, charactersListDeserialized[i].housename, charactersListDeserialized[i].gender, charactersListDeserialized[i].skillpoints, charactersListDeserialized[i].combat, charactersListDeserialized[i].intelligence, charactersListDeserialized[i].social, charactersListDeserialized[i].rank, charactersListDeserialized[i].wealth);
     charactersList.push(character);
     alert("after push");
