@@ -49,8 +49,9 @@ function printPoliticalEntities(){
   for (var kingdomNum = 0; kingdomNum < statesList.length; kingdomNum++){
     var currentKingdom = statesList[kingdomNum];
     str += currentKingdom.printState() + " Here are its direct vassals: <br><br>";
-    
+    alert("before duchy loop");
     for (var duchyNum = 0; duchyNum < currentKingdom.getDirectVassals().length; duchyNum++){
+    alert("in duchy loop");
       var currentDuchy = currentKingdom.getDirectVassals()[duchyNum];
       alert("before");
       str += currentDuchy.printState() + " Here are its direct vassals: <br><br>";
