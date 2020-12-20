@@ -13,7 +13,7 @@ function createStates(maxStates, tier){
     for (var i = 0; i < maxStates; i++){
       var stateName = generateStateName(statesList);
       var state = new State(stateName, tier, directVassals);
-      
+      alert(maxVassals);
       directVassals = createStates(maxVassals, tier - 1);
       state.setDirectVassals(directVassals);
     
