@@ -27,7 +27,7 @@ function parseSettlementsList(settlementsListDeserialized){
     var settlement = new Settlement(settlementsListDeserialized[i].name, settlementsListDeserialized[i].size, settlementsListDeserialized[i].importantCharacters);
     settlementsList.push(settlement);
   }
-  alert("utils after - " + settlementsList[0].importantCharacters);
+  alert("utils after - " + settlementsList[0].getImportantCharacters());
   
   return settlementsList;
 }
