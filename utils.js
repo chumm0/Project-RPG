@@ -42,7 +42,7 @@ function parseStatesList(varName){
 }
 
 function storeVariable(varName, varObj){
-  alert("start");
+  alert(varObj);
   localStorage.setItem(varName, JSON.stringify(varObj));
   alert("end");
 }
