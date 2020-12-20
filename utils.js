@@ -48,17 +48,21 @@ function storeVariable(varName, varObj){
   localStorage.setItem(varName, objString);
 }
 
-function storeCyclicObject(varName, varObj){
-  var seen = [];
-  var objString = JSON.stringify(varObj, function(key, val) {
-    if (val != null && typeof val == "object") {
-      if (seen.indexOf(val) >= 0) {
+function storeCyclicObject(varName, varObj){ 
+  var cache = [];
+  
+  var objString = JSON.stringify(varObj, function(key, value) {
+    if (typeof value === 'object' && value !== null) {
+      if (cache.indexOf(value) !== -1) {
+        // Circular reference found, discard key
         return;
       }
-      seen.push(val);
+      // Store value in our collection
+      cache.push(value);
     }
-    return val;
-  });  
+    return value;
+  });
+  cache = null; // Enable garbage collection
   
   localStorage.setItem(varName, objString);
 }
