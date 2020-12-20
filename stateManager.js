@@ -7,7 +7,6 @@ function initializePoliticalWorld(){
 
 function createStates(maxStates, tier, liege){
   var statesList = [];
-  alert(maxStates);
   for (var i = 0; i < maxStates; i++){
     var stateName = generateStateName(statesList);
     var state = new State(stateName, tier, liege);
@@ -21,6 +20,7 @@ function createStates(maxStates, tier, liege){
       vassals = createSettlements(maxStates, state);
       state.setDirectVassals(vassals);
     }
+    alert(tier + " " + i);
   }
   
   alert("out");
