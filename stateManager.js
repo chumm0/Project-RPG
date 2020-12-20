@@ -35,7 +35,9 @@ function initializePoliticalWorld(){
 }
 
 function printWorldPoliticalMap(){
+  alert("in");
   var statesList = parseStatesList("statesList");
+  alert("out");
   var str = "";
   
   for (var kingdomNum = 0; kingdomNum < statesList.length; kingdomNum++){
