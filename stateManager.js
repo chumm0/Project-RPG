@@ -45,10 +45,12 @@ function createStates(maxStates, tier){
 function printPoliticalEntities(){
   var kingdomsList = parseStatesList("kingdomsList", null);
   var str = "";
-  
+  alert("in");
   for (var kingdomNum = 0; kingdomNum < kingdomsList.length; kingdomNum++){
     var currentKingdom = kingdomsList[kingdomNum];
+  alert("before parse");
     var duchyList = parseStatesList("", currentKingdom.getDirectVassals());
+  alert("after parse");
     str += currentKingdom.printState() + " Here are its direct vassals: <br><br>";
     alert("going to duchy for loop");
     for (var duchyNum = 0; duchyNum < duchyList.length; duchyNum++){
