@@ -5,14 +5,12 @@ const SettlementSize = {
 };
 Object.freeze(SettlementSize);
 
-function Settlement(name, size, importantCharacters){
-  this.name = name;
+function Settlement(name, stateTier, directLiegeState, size, importantCharacters){
+  State.call(name, stateTier, directLiegeState);
+  
   this.size = size;
   this.importantCharacters = importantCharacters;
 }
-
-Settlement.prototype.getName = function(){ return this.name; }
-Settlement.prototype.setName = function(value) { this.name = value; }
 
 Settlement.prototype.getSize = function(){ return this.size; }
 Settlement.prototype.setSize = function(value) { this.size = value; }
