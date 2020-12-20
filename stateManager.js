@@ -43,16 +43,28 @@ function createStates(maxStates, tier){
 }
 
 function printPoliticalEntities(){
-  var statesList = parseStatesList("kingdomsList", null);
+  var kingdomsList = parseStatesList("kingdomsList", null);
   var str = "";
   
-  for (var kingdomNum = 0; kingdomNum < statesList.length; kingdomNum++){
-    var currentKingdom = statesList[kingdomNum];
+  for (var kingdomNum = 0; kingdomNum < kingdomsList.length; kingdomNum++){
+    var currentKingdom = kingdomsList[kingdomNum];
     var duchyList = parseStatesList("", currentKingdom.getDirectVassals());
-    alert("after parse");
-    alert(duchyList[0].getName());
     str += currentKingdom.printState() + " Here are its direct vassals: <br><br>";
-  }
+    
+    for (var duchyNum = 0; duchyNum < duchyList.length; duchyNum++){
+      var currentDuchy = duchyList[duchyNum];
+      var countyList = parseStatesList("", currentDuchy.getDirectVassals());
+      str += currentDuchy.printState() + " Here are its direct vassals: <br><br>";
+      
+      for (var countyNum = 0; countyNum < countyList.length; countyNum++){
+        var currentCounty = countyList[countyNum];
+        str += currentCounty.printState() + "<br>";
+      }
+      
+      str += "<br>";
+    }
+    
+    str + = "<br>";
   
   var printElement = document.getElementsByClassName("print")[0];
   printElement.innerHTML = str;
