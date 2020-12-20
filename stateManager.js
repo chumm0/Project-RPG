@@ -1,6 +1,7 @@
 function initializePoliticalWorld(){
   var maxKingdoms = getRandomInt(7) + 4;
   var kingdomsList = createState(maxKingdoms, StateTier.kingdom, null);
+  alert("done");
 }
 
 function createState(maxStates, tier, liege){
