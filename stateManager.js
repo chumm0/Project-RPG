@@ -1,5 +1,5 @@
 function generatePoliticalEntities(){
-  var maxStates = getRandomInt(7) + 4;
+  var maxStates = getRandomInt(3) + 4;
   var kingdomsList = createStates(maxStates, StateTier.kingdom);
   storeObject("kingdomsList", kingdomsList);
 }
@@ -7,21 +7,23 @@ function generatePoliticalEntities(){
 function createStates(maxStates, tier){
   var statesList = [];
   var directVassals = [];
-  var maxVassals = getRandomInt(7) + 4;
   
-  if (tier > StateTier.county){
-    for (var i = 0; i < maxStates; i++){
-      var stateName = generateStateName(statesList);
-      var state = new State(stateName, tier, directVassals);
-      alert(maxVassals);
+  for (var i = 0; i < maxStates; i++){
+    var stateName = generateStateName(statesList);
+    var state = new State(stateName, tier, directVassals);
+    var maxVassals = getRandomInt(3) + 4;
+    
+    if (tier > StateTier.county){
       directVassals = createStates(maxVassals, tier - 1);
       state.setDirectVassals(directVassals);
-    
       statesList.push(state);
     }
-  }
-  else if (tier == StateTier.county){
-    directVassals = createSettlements(maxVassals);
+    else if (tier == StateTier.county){
+      directVassals = createSettlements(maxVassals);
+      state.setDirectVassals(directVassals);
+    }
+    
+    statesList.push(state);
   }
   
   return statesList;
