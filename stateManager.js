@@ -1,7 +1,7 @@
 function generatePoliticalEntities(){
   var maxStates = getRandomInt(7) + 4;
-  var statesList = createStates(maxStates, StateTier.kingdom);
-  storeObject("statesList", statesList);
+  var kingdomsList = createStates(maxStates, StateTier.kingdom);
+  storeObject("kingdomsList", kingdomsList);
 }
 
 function createStates(maxStates, tier){
@@ -43,7 +43,7 @@ function createStates(maxStates, tier){
 }
 
 function printPoliticalEntities(){
-  var statesList = parseStatesList("statesList");
+  var statesList = parseStatesListFromStorage("statesList");
   var str = "";
   
   for (var kingdomNum = 0; kingdomNum < statesList.length; kingdomNum++){
@@ -57,4 +57,16 @@ function printPoliticalEntities(){
   
   var printElement = document.getElementsByClassName("print")[0];
   printElement.innerHTML = str;
+}
+
+function parseStatesList(varObj){
+  var statesListDeserialized = JSON.parse(varObj);
+  var statesList = [];
+  
+  for (var i = 0; i < statesListDeserialized.length; i++){
+    var state = new State(statesListDeserialized[i].name, statesListDeserialized[i].stateTier, statesListDeserialized[i].directVassals);
+    statesList.push(state);
+  }
+  
+  return statesList;
 }
