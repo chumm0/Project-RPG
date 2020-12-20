@@ -26,23 +26,25 @@ function printStates(){
   var statesList = parseStatesList("statesList");
   var printElement = document.getElementsByClassName("print")[0];
   var str = "";
-      alert("1");
   
   for (var i = 0; i < statesList.length; i++){
+      alert("1");
     var currentState = statesList[i];
+      alert("2");
     var settlementsList = parseSettlementsList(currentState.getSettlements());
+      alert("3");
     
     str += currentState.getName() + " has " + settlementsList.length + " settlements! Here are the settlements:<br>";
-      alert("2");
     
     for (var j = 0; j < settlementsList.length; j++){
       var currentSettlement = settlementsList[j];
       var importantCharactersList = parseCharactersList(currentSettlement.getImportantCharacters());
-      alert("3");
+      
       str += currentSettlement.getName() + " - Here is a list of its important characters:<br><br>";
       
       for (var k = 0; k < importantCharactersList.length; k++){
         var currentImportantCharacter = importantCharactersList[k]
+        
         str += currentImportantCharacter.getFirstname() + " " + currentImportantCharacter.getLastname() + "<br>";
       }
       
