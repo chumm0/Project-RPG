@@ -18,7 +18,7 @@ function createStates(maxStates, tier, liege){
     }
     else {
       vassals = createSettlements(maxStates, state);
-      state. setDirectVassals(vassals);
+      state.setDirectVassals(vassals);
     }
     
   }
