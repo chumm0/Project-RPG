@@ -1,7 +1,9 @@
 function generatePoliticalEntities(){
   var maxStates = GetRandomInt(7) + 4;
+  alert("before generation");
   var statesList = createStates(maxStates, StateTier.kingdom);
   storeObject("statesList", statesList);
+  alert("after generation and save");
 }
 
 function createStates(maxStates, tier){
