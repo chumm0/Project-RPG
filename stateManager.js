@@ -1,7 +1,7 @@
 function initializePoliticalWorld(){
-  var maxKingdoms = getRandomInt(7) + 4;
-  var kingdomsList = createStates(maxKingdoms, StateTier.kingdom, null);
-  alert(kingdomsList.length);
+  var maxStates = getRandomInt(7) + 4;
+  var statesList = createStates(maxStates, StateTier.kingdom, null);
+  storeVariable("statesList", statesList);
 }
 
 function createStates(maxStates, tier, liege){
@@ -40,4 +40,17 @@ function createSettlements(maxSettlements, liege){
   }
   
   return settlementsList;
+}
+
+function printWorldPoliticalMap(){
+  var statesList = parseStatesList("statesList");
+  var str = "";
+  
+  for (var kingdomNum = 0; kingdomNum < statesList.length; kingdomNum++){
+    var currentKingdom = statesList[kingdomNum];
+    str += currentKingdom.getName() + " Kingdom has " + currentKingdom.getDirectVassals().length + " direct vassals.<br><br>";
+  }
+  
+  var printElement = document.getElementsByClassName("print")[0];
+  printElement.innerHTML = str;
 }
