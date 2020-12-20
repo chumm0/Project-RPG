@@ -22,7 +22,7 @@ function parseCharactersList(charactersListDeserialized){
 
 function parseSettlementsList(settlementsListDeserialized){
   var settlementsList = [];
-  
+  alert(settlementsListDeserialized[i].importantCharacters);
   for (var i = 0; i < settlementsListDeserialized.length; i++){
     var settlement = new Settlement(settlementsListDeserialized[i].name, settlementsListDeserialized[i].size, settlementsListDeserialized[i].importantCharacters);
     settlementsList.push(settlement);
