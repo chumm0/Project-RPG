@@ -32,7 +32,7 @@ function printStates(){
     var currentState = statesList[i];
       alert("2");
     var settlementsList = parseSettlementsList(currentState.getSettlements());
-      alert("3");
+      alert(settlementsList[0].getImportantCharacters());
     
     str += currentState.getName() + " has " + settlementsList.length + " settlements! Here are the settlements:<br>";
     
