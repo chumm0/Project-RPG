@@ -50,12 +50,12 @@ function printPoliticalEntities(){
     var currentKingdom = kingdomsList[kingdomNum];
     var duchyList = parseStatesList("", currentKingdom.getDirectVassals());
     str += currentKingdom.printState() + " Here are its direct vassals: <br><br>";
-    
+    alert("going to duchy for loop");
     for (var duchyNum = 0; duchyNum < duchyList.length; duchyNum++){
       var currentDuchy = duchyList[duchyNum];
       var countyList = parseStatesList("", currentDuchy.getDirectVassals());
       str += currentDuchy.printState() + " Here are its direct vassals: <br><br>";
-      
+    alert("going to county for loop");
       for (var countyNum = 0; countyNum < countyList.length; countyNum++){
         var currentCounty = countyList[countyNum];
         str += currentCounty.printState() + "<br>";
