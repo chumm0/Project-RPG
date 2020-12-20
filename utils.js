@@ -32,10 +32,9 @@ function parseSettlementsList(settlementsListDeserialized){
 function parseStatesList(varName){
   var statesListDeserialized = JSON.parse(localStorage.getItem(varName) || "[]");
   var statesList = [];
-  alert("before:" + statesListDeserialized[0].directVassals);
+  
   for (var i = 0; i < statesListDeserialized.length; i++){
     var state = new State(statesListDeserialized[i].name, statesListDeserialized[i].stateTier, statesListDeserialized[i].directVassals);
-  alert("after:" + statesListDeserialized[0].directVassals);
     statesList.push(state);
   }
   
