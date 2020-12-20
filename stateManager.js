@@ -44,6 +44,7 @@ function createSettlements(maxSettlements, liege){
 
 function printWorldPoliticalMap(){
   var statesList = parseStatesList("statesList");
+  alert("parsed!");
   var str = "";
   
   for (var kingdomNum = 0; kingdomNum < statesList.length; kingdomNum++){
