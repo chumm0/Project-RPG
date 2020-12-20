@@ -75,3 +75,22 @@ function printPoliticalEntities(){
   var printElement = document.getElementsByClassName("print")[0];
   printElement.innerHTML = str;
 }
+
+function parseStatesList(varName, varObj){
+  var statesListDeserialized = [];
+  var statesList = [];
+  
+  if (varObj == null){
+    statesListDeserialized = JSON.parse(localStorage.getItem(varName) || "[]");
+  }
+  else{
+    statesListDeserialized = varObj;
+  }
+  
+  for (var i = 0; i < statesListDeserialized.length; i++){
+    var state = new State(statesListDeserialized[i].name, statesListDeserialized[i].stateTier, statesListDeserialized[i].directVassals);
+    statesList.push(state);
+  }
+  
+  return statesList;
+}
