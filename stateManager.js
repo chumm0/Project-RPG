@@ -42,7 +42,7 @@ function printStates(){
       for (var k = 0; k < importantCharactersList.length; k++){
         var currentImportantCharacter = importantCharactersList[k];
         
-        str += currentImportantCharacter.getFirstname() + " " + currentImportantCharacter.getHouseName() + "<br>";
+        str += currentImportantCharacter.getFirstname() + " " + currentImportantCharacter.getHousename() + "<br>";
       }
       
       str += "<br>"
