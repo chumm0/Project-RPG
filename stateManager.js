@@ -40,7 +40,7 @@ function printWorldPoliticalMap(){
   
   for (var kingdomNum = 0; kingdomNum < kingdomsList.length; kingdomNum++){
     var currentKingdom = kingdomsList[kingdomNum];
-    str += currentKingdom.getName() + " Kingdom has " + currentKingdom.getDirectVassalStates().length + " direct vassals.<br><br>";
+    str += currentKingdom.getName() + " Kingdom has " + currentKingdom.directVassalStates.length + " direct vassals.<br><br>";
   }
   
   var printElement = document.getElementsByClassName("print")[0];
