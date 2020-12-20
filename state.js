@@ -22,10 +22,8 @@ State.prototype.getStateTier = function() { return this.stateTier; }
 State.prototype.setDirectLiegeState = function(value){ this.directLiegeState = value; }
 State.prototype.getDirectLiegeState = function(){ return this.directLiegeState; }
 
-State.prototype.print = function()
-{
-  return this.name;
-}
+State.prototype.setDirectVassalStates = function(value){ this.directVassalStates = value; }
+State.prototype.getDirectVassalStates = function(){ return this.directVassalStates; }
 
 //SETTLEMENTS
 
