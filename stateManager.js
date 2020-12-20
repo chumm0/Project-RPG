@@ -1,24 +1,24 @@
 function initializePoliticalWorld(){
   alert("start");
   var maxKingdoms = getRandomInt(7) + 4;
-  var kingdomsList = createState(maxKingdoms, StateTier.kingdom, null);
+  var kingdomsList = createStates(maxKingdoms, StateTier.kingdom, null);
   alert("done");
 }
 
-function createState(maxStates, tier, liege){
+function createStates(maxStates, tier, liege){
   var statesList = [];
   
   for (var i = 0; i < maxStates; i++){
     var stateName = generateStateName(statesList);
     var state = new State(stateName, tier, liege);
     var vassals = [];
-    if (tier > 2){
-      var vassals = createState(maxStates, tier - 1, state);
+    if (tier > 3){
+      vassals = createState(maxStates, tier - 1, state);
       state.setDirectVassals(vassals);
     }
-    else if (tier == 1){
+    else if (tier == 2){
       alert("in");
-      createSettlements(maxStates, state);
+      vassals = createSettlements(maxStates, state);
     }
   }
   
@@ -36,4 +36,6 @@ function createSettlements(maxSettlements, liege){
     
     settlementsList.push(settlement);
   }
+  
+  return settlementsList;
 }
