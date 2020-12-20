@@ -17,7 +17,9 @@ function createStates(maxStates, tier, liege){
       state.setDirectVassals(vassals);
     }
     else if (tier == 2){
+      alert("in");
       vassals = createSettlements(maxStates, state);
+      alert("out");
       state.setDirectVassals(vassals);
     }
   }
@@ -27,7 +29,6 @@ function createStates(maxStates, tier, liege){
 
 function createSettlements(maxSettlements, liege){
   var settlementsList = [];
-  alert("in");
   
   for (var i = 0; i < maxSettlements; i++){
     var settlementName = generateSettlementName();
@@ -37,6 +38,6 @@ function createSettlements(maxSettlements, liege){
     
     settlementsList.push(settlement);
   }
-  alert("out");
+  
   return settlementsList;
 }
