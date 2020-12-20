@@ -63,9 +63,11 @@ function parseStatesList(varName, varObj){
   var statesList = [];
   
   if (varObj == null){
+  alert("from storage");
     statesListDeserialized = JSON.parse(localStorage.getItem(varName) || "[]");
   }
   else{
+  alert("not from storage");
     statesListDeserialized = JSON.parse(varObj);
   }
   
