@@ -3,9 +3,12 @@ function initializePoliticalWorld(){
   //var statesList = createStates(maxStates, StateTier.kingdom, null);
   var state1 = new State("name1", StateTier.kingdom, null);
   var state2 = new State("name2", StateTier.duchy, state1);
-  var state3 = new State("name3", StateTier.kingdom, null);
-  var state4 = new State("name4", StateTier.duchy, state3);
-  var stateList = [ state1, state3 ];
+  var state3 = new State("name3", StateTier.county, state2);
+  var state4 = new State("name4", StateTier.kingdom, null);
+  var state5 = new State("name4", StateTier.duchy, state4);
+  var state6 = new State("name4", StateTier.county, state5);
+  
+  var stateList = [ state1, state4 ];
   storeVariable("stateList", stateList);
 }
 
