@@ -17,9 +17,24 @@ State.prototype.setName = function(value){ this.name = value; }
 State.prototype.getName = function(){ return this.name; }
 
 State.prototype.getStateTier = function() { return this.stateTier; }
+State.prototype.getStateTierTitle = function(){
+  switch(this.stateTier){
+    case StateTier.county:
+      return "county";
+    case StateTier.duchy:
+      return "duchy";
+    case StateTier.kingdom:
+      return "kingdom";
+  }
+}
 
 State.prototype.setDirectVassals = function(value){ this.directVassals = value; }
 State.prototype.getDirectVassals = function(){ return this.directVassals; }
+
+State.prototype.printState = function(){ 
+  var str = this.getName() + " is a " + this.getStateTierTitle() + " with " + this.getDirectVassals().length + " direct vassals!";
+  return str;
+}
 
 //SETTLEMENTS
 
