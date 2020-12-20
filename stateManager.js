@@ -9,7 +9,7 @@ function createState(maxStates, tier, liege){
   var statesList = [];
   
   for (var i = 0; i < maxStates; i++){
-    var stateName = generateStateName();
+    var stateName = generateStateName(statesList);
     alert("1");
     var state = new State(stateName, tier, liege);
     var vassals = [];
