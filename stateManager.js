@@ -31,7 +31,7 @@ function createStates(maxStates, tier, liege){
 
 function createSettlements(maxSettlements, liege){
   var settlementsList = [];
-  
+  alert("in");
   for (var i = 0; i < maxSettlements; i++){
     var settlementName = generateSettlementName();
     var settlementSize = getRandomInt(3) + 1;
@@ -40,6 +40,7 @@ function createSettlements(maxSettlements, liege){
     
     settlementsList.push(settlement);
   }
+  alert("out");
   
   return settlementsList;
 }
