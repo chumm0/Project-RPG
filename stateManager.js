@@ -15,11 +15,11 @@ function createStates(maxStates, tier, liege){
     
     if (tier > StateTier.county){
       vassalStates = createStates(maxStates, tier - 1, state);
-      state.setDirectVassals(vassals);
+      state.setDirectVassalStates(vassalStates);
     }
     else if (tier == StateTier.county) {
       vassalStates = createSettlements(maxStates, state);
-      state.setDirectVassalStates(vassals);
+      state.setDirectVassalStates(vassalStates);
     }
   }
   
