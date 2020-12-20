@@ -48,7 +48,6 @@ function printPoliticalEntities(){
   
   for (var kingdomNum = 0; kingdomNum < statesList.length; kingdomNum++){
     var currentKingdom = statesList[kingdomNum];
-    alert(currentKingdom.getDirectVassals());
     var duchyList = parseStatesList("", currentKingdom.getDirectVassals());
     alert("after parse");
     alert(duchyList[0].getName());
@@ -67,7 +66,7 @@ function parseStatesList(varName, varObj){
     statesListDeserialized = JSON.parse(localStorage.getItem(varName) || "[]");
   }
   else{
-    statesListDeserialized = JSON.parse(varObj || "[]");
+    statesListDeserialized = JSON.parse(varObj);
   }
   
   for (var i = 0; i < statesListDeserialized.length; i++){
