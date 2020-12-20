@@ -14,11 +14,7 @@ function createState(maxStates, tier, liege){
     var state = new State(stateName, tier, liege);
     var vassals = [];
     if (tier > 2){
-      for (var j = 0; j < maxStates; j++){
-        var vassal = createState(maxStates, tier - 1, state);
-        vassals.push(vassal);
-      }
-      
+      var vassals = createState(maxStates, tier - 1, state);
       state.setDirectVassals(vassals);
     }
     else if (tier == 1){
