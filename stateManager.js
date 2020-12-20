@@ -11,30 +11,24 @@ function createStates(maxStates, tier, liege){
   for (var i = 0; i < maxStates; i++){
     var stateName = generateStateName(statesList);
     var state = new State(stateName, tier, liege);
-    var vassals = [];
-    alert(tier + " " + i);
+    var vassalStates = [];
     
     if (tier > StateTier.county){
-      vassals = createStates(maxStates, tier - 1, state);
+      vassalStates = createStates(maxStates, tier - 1, state);
       state.setDirectVassals(vassals);
     }
     else if (tier == StateTier.county) {
-      vassals = createSettlements(maxStates, state);
-      alert("out2");
-      state.setDirectVassals(vassals);
-      alert("out3");
+      vassalStates = createSettlements(maxStates, state);
+      state.setDirectVassalStates(vassals);
     }
-    alert("out4");
   }
-  
-  alert("out5");
   
   return statesList;
 }
 
 function createSettlements(maxSettlements, liege){
   var settlementsList = [];
-  alert("in");
+  
   for (var i = 0; i < maxSettlements; i++){
     var settlementName = generateSettlementName();
     var settlementSize = getRandomInt(3) + 1;
@@ -43,7 +37,6 @@ function createSettlements(maxSettlements, liege){
     
     settlementsList.push(settlement);
   }
-  alert("out1");
   
   return settlementsList;
 }
