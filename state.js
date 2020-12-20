@@ -1,17 +1,16 @@
 //STATES
 
 const StateTier = {
-  settlement: 1,
-  county: 2,
-  duchy: 3,
-  kingdom: 4,
+  county: 1,
+  duchy: 2,
+  kingdom: 3,
 };
 Object.freeze(StateTier);
 
-function State(name, stateTier, directLiegeState){
+function State(name, stateTier, directVassals){
   this.name = name;
   this.stateTier = stateTier;
-  this.directLiegeState = directLiegeState;
+  this.directVassals = directVassals;
 }
 
 State.prototype.setName = function(value){ this.name = value; }
@@ -19,11 +18,8 @@ State.prototype.getName = function(){ return this.name; }
 
 State.prototype.getStateTier = function() { return this.stateTier; }
 
-State.prototype.setDirectLiegeState = function(value){ this.directLiegeState = value; }
-State.prototype.getDirectLiegeState = function(){ return this.directLiegeState; }
-
-State.prototype.setDirectVassalStates = function(value){ this.directVassalStates = value; }
-State.prototype.getDirectVassalStates = function(){ return this.directVassalStates; }
+State.prototype.setDirectVassals = function(value){ this.directVassals = value; }
+State.prototype.getDirectVassals = function(){ return this.directVassals; }
 
 //SETTLEMENTS
 
@@ -34,12 +30,14 @@ const SettlementSize = {
 };
 Object.freeze(SettlementSize);
 
-function Settlement(name, stateTier, directLiegeState, size, importantCharacters){
-  State.call(name, stateTier, directLiegeState);
-  
+function Settlement(name, size, importantCharacters){
+  this.name = name;
   this.size = size;
   this.importantCharacters = importantCharacters;
 }
+
+Settlement.prototype.getName = function(){ return this.name; }
+Settlement.prototype.setName = function(value) { this.name = value; }
 
 Settlement.prototype.getSize = function(){ return this.size; }
 Settlement.prototype.setSize = function(value) { this.size = value; }
