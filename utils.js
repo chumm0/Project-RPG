@@ -42,6 +42,8 @@ function parseStatesList(varName){
 }
 
 function storeVariable(varName, varObj){
+  alert("Start");
   var objString = JSON.stringify(varObj);
   localStorage.setItem(varName, objString);
+  alert("End");
 }
