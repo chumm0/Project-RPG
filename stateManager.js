@@ -10,7 +10,6 @@ function createState(maxStates, tier, liege){
   
   for (var i = 0; i < maxStates; i++){
     var stateName = generateStateName(statesList);
-    alert("1");
     var state = new State(stateName, tier, liege);
     var vassals = [];
     if (tier > 2){
@@ -18,9 +17,9 @@ function createState(maxStates, tier, liege){
       state.setDirectVassals(vassals);
     }
     else if (tier == 1){
+      alert("in");
       createSettlements(maxStates, state);
     }
-    alert("2");
   }
   
   return statesList;
