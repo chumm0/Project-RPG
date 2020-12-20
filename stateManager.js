@@ -20,11 +20,14 @@ function createStates(maxStates, tier, liege){
     }
     else if (tier == StateTier.county) {
       vassals = createSettlements(maxStates, state);
+      alert("out2");
       state.setDirectVassals(vassals);
+      alert("out3");
     }
+    alert("out4");
   }
   
-  alert("out");
+  alert("out5");
   
   return statesList;
 }
@@ -40,7 +43,7 @@ function createSettlements(maxSettlements, liege){
     
     settlementsList.push(settlement);
   }
-  alert("out");
+  alert("out1");
   
   return settlementsList;
 }
