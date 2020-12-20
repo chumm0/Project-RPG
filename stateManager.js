@@ -35,10 +35,13 @@ function initializePoliticalWorld(){
 }
 
 function printWorldPoliticalMap(){
+  alert("in");
   var kingdomsList = parseStatesList("kingdomsList");
+  alert("parsed");
   var str = "";
   
   for (var kingdomNum = 0; kingdomNum < kingdomsList.length; kingdomNum++){
+  alert("in for loop");
     var currentKingdom = kingdomsList[kingdomNum];
     str += currentKingdom.getName() + " Kingdom has " + currentKingdom.getDirectVassals().length + " direct vassals.<br><br>";
   }
