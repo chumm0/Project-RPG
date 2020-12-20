@@ -6,7 +6,6 @@ function initializePoliticalWorld(){
 }
 
 function createStates(maxStates, tier, liege){
-  alert(tier);
   var statesList = [];
   for (var i = 0; i < maxStates; i++){
     var stateName = generateStateName(statesList);
