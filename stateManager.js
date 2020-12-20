@@ -20,7 +20,6 @@ function createStates(maxStates, tier, liege){
       vassals = createSettlements(maxStates, state);
       state.setDirectVassals(vassals);
     }
-    
   }
       alert("out");
   
