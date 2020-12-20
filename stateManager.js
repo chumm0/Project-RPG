@@ -1,9 +1,16 @@
-function initializePoliticalWorld(){
-  var maxStates = getRandomInt(7) + 4;
-  var statesList = [];
-  createStates(maxStates, StateTier.kingdom, null);
-  alert("done");
-  storeVariable("statesList", statesList);
+function createSettlements(maxSettlements, liege){
+  var settlementsList = [];
+  
+  for (var i = 0; i < maxSettlements; i++){
+    var settlementName = generateSettlementName();
+    var settlementSize = getRandomInt(3) + 1;
+    var importantCharacters = generateCharacters();
+    var settlement = new Settlement(settlementName, 1, liege, settlementSize, importantCharacters);
+    
+    settlementsList.push(settlement);
+  }
+  
+  return settlementsList;
 }
 
 function createStates(maxStates, tier, liege){
@@ -29,19 +36,11 @@ function createStates(maxStates, tier, liege){
   return statesList;
 }
 
-function createSettlements(maxSettlements, liege){
-  var settlementsList = [];
-  
-  for (var i = 0; i < maxSettlements; i++){
-    var settlementName = generateSettlementName();
-    var settlementSize = getRandomInt(3) + 1;
-    var importantCharacters = generateCharacters();
-    var settlement = new Settlement(settlementName, 1, liege, settlementSize, importantCharacters);
-    
-    settlementsList.push(settlement);
-  }
-  
-  return settlementsList;
+function initializePoliticalWorld(){
+  var maxStates = getRandomInt(7) + 4;
+  var statesList = createStates(maxStates, StateTier.kingdom, null);
+  alert("done");
+  storeVariable("statesList", statesList);
 }
 
 function printWorldPoliticalMap(){
