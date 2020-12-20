@@ -29,18 +29,6 @@ function parseSettlementsList(settlementsListDeserialized){
   return settlementsList;
 }
 
-function parseStatesList(varName){
-  var statesListDeserialized = JSON.parse(localStorage.getItem(varName) || "[]");
-  var statesList = [];
-  
-  for (var i = 0; i < statesListDeserialized.length; i++){
-    var state = new State(statesListDeserialized[i].name, statesListDeserialized[i].stateTier, statesListDeserialized[i].directVassals);
-    statesList.push(state);
-  }
-  
-  return statesList;
-}
-
 function storeObject(varName, varObj){
   var objString = JSON.stringify(varObj);
   localStorage.setItem(varName, objString);
