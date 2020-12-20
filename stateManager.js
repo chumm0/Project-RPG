@@ -12,14 +12,15 @@ function createStates(maxStates, tier, liege){
     var stateName = generateStateName(statesList);
     var state = new State(stateName, tier, liege);
     var vassals = [];
-    if (tier > 2){
+    if (tier > StateTier.settlement){
       vassals = createStates(maxStates, tier - 1, state);
       state.setDirectVassals(vassals);
     }
-    else if (tier == 2){
+    else {
       vassals = createSettlements(maxStates, state);
-      state.setDirectVassals(vassals);
+      state. setDirectVassals(vassals);
     }
+    
   }
       alert("out");
   
