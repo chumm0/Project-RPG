@@ -9,6 +9,7 @@ function initializeStates(){
       var settlementName = generateSettlementName();
       var settlementSize = getRandomInt(3) + 1;
       var settlementImportantCharacters = generateCharacters();
+      alert(settlementImportantCharacters);
       var settlement = new Settlement(settlementName, settlementSize, settlementImportantCharacters);
       
       settlementsList.push(settlement);
