@@ -1,6 +1,7 @@
 function generatePoliticalEntities(){
   alert("in");
   var statesList = createStates(7, StateTier.kingdom);
+  storeObject("statesList", statesList);
   alert("out");
 }
 
