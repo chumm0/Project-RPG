@@ -22,11 +22,12 @@ function parseCharactersList(charactersListDeserialized){
 
 function parseSettlementsList(settlementsListDeserialized){
   var settlementsList = [];
-  
+  alert("utils before - " + settlementsListDeserialized[0].importantCharacters);
   for (var i = 0; i < settlementsListDeserialized.length; i++){
     var settlement = new Settlement(settlementsListDeserialized[i].name, settlementsListDeserialized[i].size, settlementsListDeserialized[i].importantCharacters);
     settlementsList.push(settlement);
   }
+  alert("utils after - " + settlementsList[0].importantCharacters);
   
   return settlementsList;
 }
