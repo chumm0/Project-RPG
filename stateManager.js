@@ -1,4 +1,5 @@
 function generatePoliticalEntities(){
+  alert("1");
   var maxStates = getRandomInt(7) + 4;
   alert("in");
   var kingdomsList = createStates(maxStates, StateTier.kingdom);
