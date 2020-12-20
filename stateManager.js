@@ -1,15 +1,13 @@
 function generatePoliticalEntities(){
-  var maxStates = GetRandomInt(7) + 4;
-  alert("before generation");
+  var maxStates = getRandomInt(7) + 4;
   var statesList = createStates(maxStates, StateTier.kingdom);
   storeObject("statesList", statesList);
-  alert("after generation and save");
 }
 
 function createStates(maxStates, tier){
   var statesList = [];
   var directVassals = [];
-  var maxVassals = GetRandomInt(7) + 4;
+  var maxVassals = getRandomInt(7) + 4;
   
   if (tier > StateTier.county){
     for (var i = 0; i < maxStates; i++){
@@ -51,7 +49,8 @@ function printPoliticalEntities(){
   for (var kingdomNum = 0; kingdomNum < statesList.length; kingdomNum++){
     var currentKingdom = statesList[kingdomNum];
     str += currentKingdom.printState() + " Here are its direct vassals: <br><br>";
-    
+    alert("before");
+    alert(currentKingdom.getVassals()[0].printState());
   }
   
   var printElement = document.getElementsByClassName("print")[0];
