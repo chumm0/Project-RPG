@@ -4,11 +4,11 @@ function initializePoliticalWorld(){
   var state1 = new State("name1", StateTier.kingdom, null);
   var state2 = new State("name2", StateTier.duchy, state1);
   var state3 = new State("name3", StateTier.county, state2);
-  var state4 = new State("name4", StateTier.kingdom, null);
-  var state5 = new State("name4", StateTier.duchy, state4);
-  var state6 = new State("name4", StateTier.county, state5);
+  var state4 = new State("name4", StateTier.county, state2);
+  var state5 = new State("name4", StateTier.kingdom, null);
+  var state6 = new State("name4", StateTier.duchy, state5);
   
-  var stateList = [ state1, state4 ];
+  var stateList = [ state1, state5 ];
   storeVariable("stateList", stateList);
 }
 
