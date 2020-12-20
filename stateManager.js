@@ -1,25 +1,12 @@
 function initializePoliticalWorld(){
   var maxStates = getRandomInt(1) + 1;
   var statesList = createStates(maxStates, StateTier.kingdom, null);
-  var state1 = new State("name1", StateTier.kingdom, null);
-  var state2 = new State("name2", StateTier.duchy, null);
-  var state3 = new State("name3", StateTier.county, null);
-  var state4 = new State("name4", StateTier.county, null);
-  var state5 = new State("name4", StateTier.kingdom, null);
-  var state6 = new State("name4", StateTier.duchy, null);
-  var state7 = new Settlement("name4", StateTier.settlement, state6, 1, generateCharacters());
-  
-  var vassals1 = [ state2, state3, state4 ];
-  var vassals2 = [ state5, state6, state7 ];
-  state1.setDirectVassalStates(vassals1);
-  state5.setDirectVassalStates(vassals2);
-  
-  var stateList = [ state1, state5 ];
-  storeVariable("stateList", stateList);
+  storeVariable("statesList", statesList);
 }
 
 function createStates(maxStates, tier, liege){
   var statesList = [];
+  
   for (var i = 0; i < maxStates; i++){
     var stateName = generateStateName(statesList);
     var state = new State(stateName, tier, liege);
@@ -33,8 +20,7 @@ function createStates(maxStates, tier, liege){
       vassalStates = createSettlements(maxStates, state);
       state.setDirectVassalStates(vassalStates);
     }
-    alert("s");
-    alert("t");
+    
     statesList.push(state);
   }
   
@@ -54,4 +40,17 @@ function createSettlements(maxSettlements, liege){
   }
   
   return settlementsList;
+}
+
+function printWorldPoliticalMap(){
+  var statesList = parseStatesList("statesList");
+  var str = "";
+  
+  for (var kingdomNum = 0; kingdomNum < statesList.length; kingdomNum++){
+    var currentKingdom = statesList[kingdomNum];
+    str += currentKingdom.getName() + " Kingdom has " + currentKingdom.getDirectVassals().length + " direct vassals.<br><br>";
+  }
+  
+  var printElement = document.getElementsByClassName("print")[0];
+  printElement.innerHTML = str;
 }
