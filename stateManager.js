@@ -17,12 +17,11 @@ function createStates(maxStates, tier, liege){
       state.setDirectVassals(vassals);
     }
     else if (tier == 2){
-      alert("in");
       vassals = createSettlements(maxStates, state);
-      alert("out");
       state.setDirectVassals(vassals);
     }
   }
+      alert("out");
   
   return statesList;
 }
