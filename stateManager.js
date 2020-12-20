@@ -1,27 +1,27 @@
 function generatePoliticalEntities(){
-  alert("in");
-  var statesList = createStates(7, StateTier.kingdom);
+  var maxStates = GetRandomInt(7) + 4;
+  var statesList = createStates(maxStates, StateTier.kingdom);
   storeObject("statesList", statesList);
-  alert("out");
 }
 
 function createStates(maxStates, tier){
   var statesList = [];
   var directVassals = [];
+  var maxVassals = GetRandomInt(7) + 4;
   
   if (tier > StateTier.county){
     for (var i = 0; i < maxStates; i++){
       var stateName = generateStateName(statesList);
       var state = new State(stateName, tier, directVassals);
-    
-      directVassals = createStates(maxStates, tier - 1);
+      
+      directVassals = createStates(maxVassals, tier - 1);
       state.setDirectVassals(directVassals);
     
       statesList.push(state);
     }
   }
   else if (tier == StateTier.county){
-    directVassals = createSettlements(maxStates);
+    directVassals = createSettlements(maxVassals);
   }
   
   return statesList;
@@ -48,7 +48,14 @@ function printPoliticalEntities(){
   
   for (var kingdomNum = 0; kingdomNum < statesList.length; kingdomNum++){
     var currentKingdom = statesList[kingdomNum];
-    str += currentKingdom.printState() + "<br><br>";
+    str += currentKingdom.printState() + " Here are its direct vassals: <br><br>";
+    
+    for (var duchyNum = 0; duchyNum < currentKingdom.getDirectVassals().length; duchyNum++){
+      var currentDuchy = currentKingdom.getDirectVassals()[duchyNum];
+      alert("before");
+      str += currentDuchy.printState() + " Here are its direct vassals: <br><br>";
+      alert("after");
+    }
   }
   
   var printElement = document.getElementsByClassName("print")[0];
