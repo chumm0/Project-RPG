@@ -20,15 +20,15 @@ function initializePoliticalWorld(){
         }
         
         countiesList.push(county);
-        county.directVassals = countiesList;
+        county.directVassals = settlementsList;
       }
       
       duchiesList.push(duchy);
-      duchy.directVassals = duchiesList;
+      duchy.directVassals = countiesList;
     }
     
     kingdomsList.push(kingdom);
-    kingdom.directVassals = kingdomsList;
+    kingdom.directVassals = duchiesList;
   }
   
   storeCyclicObject("kingdomsList", kingdomsList);
