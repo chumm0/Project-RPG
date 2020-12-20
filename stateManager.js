@@ -1,8 +1,7 @@
 function initializePoliticalWorld(){
-  alert("start");
   var maxKingdoms = getRandomInt(7) + 4;
   var kingdomsList = createStates(maxKingdoms, StateTier.kingdom, null);
-  alert("done");
+  alert(kingdomsList.length);
 }
 
 function createStates(maxStates, tier, liege){
@@ -21,6 +20,8 @@ function createStates(maxStates, tier, liege){
       vassalStates = createSettlements(maxStates, state);
       state.setDirectVassalStates(vassalStates);
     }
+    
+    statesList.push(state);
   }
   
   return statesList;
