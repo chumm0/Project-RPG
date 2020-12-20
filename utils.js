@@ -10,11 +10,9 @@ function parseCharacter(varName){
 function parseCharactersList(charactersListDeserialized){
   var charactersList = [];
   
-  alert(charactersListDeserialized);
   for (var i = 0; i < charactersListDeserialized.length; i++){
     var character = new Character(charactersListDeserialized[i].firstname, charactersListDeserialized[i].housename, charactersListDeserialized[i].gender, charactersListDeserialized[i].skillpoints, charactersListDeserialized[i].combat, charactersListDeserialized[i].intelligence, charactersListDeserialized[i].social, charactersListDeserialized[i].rank, charactersListDeserialized[i].wealth);
     charactersList.push(character);
-    alert("after push");
   }
   
   return charactersList;
@@ -22,12 +20,11 @@ function parseCharactersList(charactersListDeserialized){
 
 function parseSettlementsList(settlementsListDeserialized){
   var settlementsList = [];
-  alert("utils before - " + settlementsListDeserialized[0].importantCharacters);
+  
   for (var i = 0; i < settlementsListDeserialized.length; i++){
     var settlement = new Settlement(settlementsListDeserialized[i].name, settlementsListDeserialized[i].size, settlementsListDeserialized[i].importantCharacters);
     settlementsList.push(settlement);
   }
-  alert("utils after - " + settlementsList[0].getImportantCharacters());
   
   return settlementsList;
 }
