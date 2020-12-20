@@ -34,7 +34,7 @@ function parseStatesList(varName){
   var statesList = [];
   
   for (var i = 0; i < statesListDeserialized.length; i++){
-    var state = new State(statesListDeserialized[i].name, statesListDeserialized[i].settlements);
+    var state = new State(statesListDeserialized[i].name, statesListDeserialized[i].stateTier, statesListDeserialized[i].directLiegeState);
     statesList.push(state);
   }
   
