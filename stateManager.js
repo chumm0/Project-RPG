@@ -71,6 +71,7 @@ function parseStatesList(varName, varObj){
     statesListDeserialized = JSON.parse(varObj);
   }
   
+  alert("going to for loop");
   for (var i = 0; i < statesListDeserialized.length; i++){
     var state = new State(statesListDeserialized[i].name, statesListDeserialized[i].stateTier, statesListDeserialized[i].directVassals);
     statesList.push(state);
