@@ -1,5 +1,5 @@
 function initializePoliticalWorld(){
-  var maxStates = getRandomInt(7) + 4;
+  var maxStates = getRandomInt(2) + 1;
   var statesList = createStates(maxStates, StateTier.kingdom, null);
   var testState = new State("name", 1, null);
   alert("start");
