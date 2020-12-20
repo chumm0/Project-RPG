@@ -27,7 +27,7 @@ function createStates(maxStates, tier, liege){
       vassalStates = createSettlements(maxStates, state);
       state.setDirectVassalStates(vassalStates);
     }
-    
+    alert("s");
     statesList.push(state);
   }
   
