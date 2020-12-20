@@ -31,7 +31,7 @@ function printStates(){
     var currentState = statesList[i];
     var settlementsList = parseSettlementsList(currentState.getSettlements());
     
-    str += currentState.getName() + " has " + settlementsList.length + " settlements! Here are the settlements:<br>";
+    str += "<b>currentState.getName() + " has " + settlementsList.length + " settlements! Here are the settlements:</b><br>";
     
     for (var j = 0; j < settlementsList.length; j++){
       var currentSettlement = settlementsList[j];
