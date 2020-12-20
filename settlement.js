@@ -17,7 +17,7 @@ Settlement.prototype.setName = function(value) { this.name = value; }
 Settlement.prototype.getSize = function(){ return this.size; }
 Settlement.prototype.setSize = function(value) { this.size = value; }
 
-Settlement.prototype.getImportantCharacters = function(value) { this.importantCharacters = value; }
+Settlement.prototype.getImportantCharacters = function() { return this.importantCharacters; }
 
 Settlement.prototype.getSizeTitle = function() 
 { 
