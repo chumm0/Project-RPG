@@ -9,6 +9,11 @@ function initializePoliticalWorld(){
   var state6 = new State("name4", StateTier.duchy, state5);
   var state7 = new Settlement("name4", StateTier.settlement, state6, 1, generateCharacters());
   
+  var vassals1 = [ state2, state3, state4 ];
+  var vassals2 = [ state5, state6, state7 ];
+  state1.setDirectVassalStates(vassals1);
+  state5.setDirectVassalStates(vassals2);
+  
   var stateList = [ state1, state5 ];
   storeVariable("stateList", stateList);
 }
