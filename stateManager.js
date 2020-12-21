@@ -17,7 +17,6 @@ function createStates(maxStates, tier){
     if (tier > StateTier.county){
       directVassals = createStates(maxVassals, tier - 1);
       state.setDirectVassals(directVassals);
-      statesList.push(state);
     }
     else if (tier == StateTier.county){
       directVassals = createSettlements(maxVassals);
