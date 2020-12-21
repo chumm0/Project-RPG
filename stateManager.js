@@ -2,6 +2,7 @@ function generatePoliticalEntities(){
   var maxStates = getRandomInt(3) + 4;
   var kingdomsList = createStates(maxStates, StateTier.kingdom);
   storeObject("kingdomsList", kingdomsList);
+  alert(kingdomsList.length);
 }
 
 function createStates(maxStates, tier){
@@ -46,6 +47,7 @@ function createStates(maxStates, tier){
 
 function printPoliticalEntities(){
   var kingdomsList = parseStatesList("kingdomsList", null);
+  alert(kingdomsList.length);
   var str = "";
   
   for (var kingdomNum = 0; kingdomNum < kingdomsList.length; kingdomNum++){
